@@ -27,7 +27,7 @@ const BusinessNews = ({businessNews, headerHide}) => {
                                         </div>
                                     </div>
                                     <div className="single_post_text">
-                                        <div className="meta3"><Link to="/">uiux.subash</Link>
+                                        {/* <div className="meta3"><Link to="/">uiux.subash</Link>
                                             <Link to="#">March 26, 2020</Link>
                                         </div>
                                         <h4><Link to="/post1">Copa America: Luis Suarez from devastated US</Link></h4>
@@ -35,7 +35,7 @@ const BusinessNews = ({businessNews, headerHide}) => {
                                         <p className="post-p">The property, complete with 30-seat screening from room, a
                                             100-seat amphitheater and a swimming pond with…</p>
                                         <div className="space-20"/>
-                                        <Link to="/" className="readmore">Read more</Link>
+                                        <Link to="/" className="readmore">Read more</Link> */}
                                     </div>
                                 </div>
                             ))}

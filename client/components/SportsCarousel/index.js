@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-import Swiper from 'react-id-swiper';
+// import Swiper from 'react-id-swiper';
 
 // images
 import sports2 from '../../doc/img/sports/sports2.jpg';
@@ -103,7 +103,7 @@ const SportsCarousel = ({dark}) => {
         <div className="widget tab_widgets">
             <div className="post_type2_carousel multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                <Swiper getSwiper={setSwiper} {...params}>
+                {/* <Swiper getSwiper={setSwiper} {...params}>
                     {mostViewSort(mostView).map((item, i) => (
                         <div key={i} className="single_post2_carousel">
                             <div className="single_post widgets_small">
@@ -125,7 +125,7 @@ const SportsCarousel = ({dark}) => {
                             <div className="space-15"/>
                         </div>
                     ))}
-                </Swiper>
+                </Swiper> */}
                 <div className="navBtns">
                     <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                     <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>

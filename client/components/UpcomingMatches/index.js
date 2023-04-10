@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import {CircleSlider} from "react-circle-slider";
 
 // images
@@ -55,26 +55,26 @@ const UpcomingMatches = ({dark}) => {
                     <h2 className="widget-title">Upcoming Matches</h2>
                 </div>
                 <div className="col-4 text-right align-self-center">
-                    <Link to="#" className="see_all mb20">See All</Link>
+                    {/* <Link to="#" className="see_all mb20">See All</Link> */}
                 </div>
             </div>
             {matches.map((item, i) => (
                 <Fragment key={i}>
                     <div className="single_post post_type13 widgets_small">
                         <div className="post_img">
-                            <Link to="/">
+                            {/* <Link to="/">
                                 <img src={item.image} alt="icon"/>
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className="single_post_text">
-                            <h4><Link to="/" className="playing_teams">
+                            {/* <h4><Link to="/" className="playing_teams">
                                 {item.countries.map((country, i) => (
                                     <Fragment key={i}>
                                         {country}{' '}
                                         {(i + 1) < item.countries.length ? <span>VS &nbsp;</span> : null}
                                     </Fragment>
                                 ))}
-                            </Link></h4>
+                            </Link></h4> */}
                             <p className="meta macth_meta">
                                 {item.date} &nbsp;|&nbsp;<span> {item.time} </span> &nbsp;
                             </p>

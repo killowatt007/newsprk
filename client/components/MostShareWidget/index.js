@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-import Swiper from 'react-id-swiper';
+// import Swiper from 'react-id-swiper';
 
 // images
 import {mostViewSort} from "../../utils/commonFunctions";
@@ -83,7 +83,7 @@ const MostShareWidget = ({title, dark}) => {
             <h2 className="widget-title">{title ? title : 'Most View'}</h2>
             <div className="post_type2_carousel multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                <Swiper getSwiper={setSwiper} {...params}>
+                {/* <Swiper getSwiper={setSwiper} {...params}>
                     {mostViewSort(mostView).map((item, i) => (
                         <div key={i} className="carousel_items">
                             <div className="single_post widgets_small widgets_type4">
@@ -106,7 +106,7 @@ const MostShareWidget = ({title, dark}) => {
                             <div className="space-15"/>
                         </div>
                     ))}
-                </Swiper>
+                </Swiper> */}
                 <div className="navBtns">
                     <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                     <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>

@@ -1,48 +1,48 @@
 import React, {Fragment} from 'react';
 import Heading from "../uiStyle/Heading";
 import TrendingNewsSlider from "../TrendingNewsSlider";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 
-import transm1 from '../../doc/img/trending/transm1.jpg';
-import transm2 from '../../doc/img/trending/transm2.jpg';
-import transm4 from '../../doc/img/trending/transm4.jpg';
-import transm5 from '../../doc/img/trending/transm5.jpg';
-import transm6 from '../../doc/img/trending/transm6.jpg';
+// import transm1 from '../../doc/img/trending/transm1.jpg';
+// import transm2 from '../../doc/img/trending/transm2.jpg';
+// import transm4 from '../../doc/img/trending/transm4.jpg';
+// import transm5 from '../../doc/img/trending/transm5.jpg';
+// import transm6 from '../../doc/img/trending/transm6.jpg';
 
 const trendingNews = [
     {
-        image: transm1,
+        image: '/img/trending/transm1.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'Nancy Zhang a Chinese busy woman and Dhaka'
     },
     {
-        image: transm2,
+        image: '/img/trending/transm2.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'U.S. Response subash says he will label regions by risk of…'
     },
     {
-        image: transm4,
+        image: '/img/trending/transm4.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'Venezuela elan govt and opposit the property collect'
     },
     {
-        image: transm5,
+        image: '/img/trending/transm5.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'Nancy Zhang a Chinese busy woman and Dhaka'
     },
     {
-        image: transm6,
+        image: '/img/trending/transm6.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'U.S. Response subash says he will label regions by risk of…'
     },
     {
-        image: transm4,
+        image: '/img/trending/transm4.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'Venezuela elan govt and opposit the property collect'
@@ -71,10 +71,18 @@ const TrendingNews = ({dark}) => {
                                 </div>
                                 <div className="single_post_text">
                                     <div className="meta2">
-                                        <Link to="/">{item.category}</Link>
-                                        <Link to="/">{item.date}</Link>
+                                        {/* <Link to="/"> */}
+                                            {item.category}
+                                        {/* </Link> */}
+                                        {/* <Link to="/"> */}
+                                            {item.date}
+                                        {/* </Link> */}
                                     </div>
-                                    <h4><Link to="/post1">{item.title}</Link></h4>
+                                    <h4>
+                                        {/* <Link to="/post1"> */}
+                                            {item.title}
+                                        {/* </Link> */}
+                                    </h4>
                                 </div>
                             </div>
                             <div className="space-15"/>
@@ -97,10 +105,18 @@ const TrendingNews = ({dark}) => {
                                 </div>
                                 <div className="single_post_text">
                                     <div className="meta2">
-                                        <Link to="/">{item.category}</Link>
-                                        <Link to="/">{item.date}</Link>
+                                        {/* <Link to="/"> */}
+                                            {item.category}
+                                        {/* </Link> */}
+                                        {/* <Link to="/"> */}
+                                            {item.date}
+                                        {/* </Link> */}
                                     </div>
-                                    <h4><Link to="/post1">{item.title}</Link></h4>
+                                    <h4>
+                                        {/* <Link to="/post1"> */}
+                                            {item.title}
+                                        {/* </Link> */}
+                                    </h4>
                                 </div>
                             </div>
                             <div className="space-15"/>

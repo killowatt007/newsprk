@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import WidgetTab from "../WidgetTab";
 import Slider from "react-slick";
 // import "../node_modules/slick-carousel/slick/slick.css";
@@ -7,76 +7,86 @@ import FontAwesome from "../uiStyle/FontAwesome";
 import ModalVideo from 'react-modal-video'
 
 // images
-import gsil1 from '../../doc/img/blog/post_gsi1.jpg';
-import gsil2 from '../../doc/img/blog/post_gsi2.jpg';
-import gsil3 from '../../doc/img/blog/post_gsi3.jpg';
-import gsil4 from '../../doc/img/blog/post_gsi4.jpg';
-import gsil5 from '../../doc/img/blog/post_gsi5.jpg';
-import gsil6 from '../../doc/img/blog/post_gsi6.jpg';
-import gsil7 from '../../doc/img/blog/post_gsi7.jpg';
-import sliderImg1 from '../../doc/img/header/sider-top.jpg';
-import sliderImg2 from '../../doc/img/header/sider-top2.jpg';
+// import gsil1 from '../../doc/img/blog/post_gsi1.jpg';
+// import gsil2 from '../../doc/img/blog/post_gsi2.jpg';
+// import gsil3 from '../../doc/img/blog/post_gsi3.jpg';
+// import gsil4 from '../../doc/img/blog/post_gsi4.jpg';
+// import gsil5 from '../../doc/img/blog/post_gsi5.jpg';
+// import gsil6 from '../../doc/img/blog/post_gsi6.jpg';
+// import gsil7 from '../../doc/img/blog/post_gsi7.jpg';
+// import sliderImg1 from '../../doc/img/header/sider-top.jpg';
+// import sliderImg2 from '../../doc/img/header/sider-top2.jpg';
 
-const thumbs = [gsil1, gsil2, gsil3, gsil4, gsil5, gsil6, gsil7, gsil4, gsil3];
+const thumbs = [
+    '/img/blog/post_gsi1.jpg',
+    '/img/blog/post_gsi2.jpg',
+    '/img/blog/post_gsi3.jpg',
+    '/img/blog/post_gsi4.jpg',
+    '/img/blog/post_gsi5.jpg',
+    '/img/blog/post_gsi6.jpg',
+    '/img/blog/post_gsi7.jpg',
+    '/img/blog/post_gsi4.jpg',
+    '/img/blog/post_gsi3.jpg'
+];
 const postSlider = [
     {
-        image: sliderImg1,
+        image: '/img/header/sider-top.jpg',
         title: 'Japan’s virus success has puzzled the world. Is its luck running out?',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: sliderImg2,
+        image: '/img/header/sider-top2.jpg',
         title: 'Japan’s virus success has puzzled the world. Is its luck running out?',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: sliderImg2,
+        image: '/img/header/sider-top2.jpg',
         title: 'Copa America: Luis Suarez from devastated US America',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: sliderImg1,
+        image: '/img/header/sider-top2.jpg',
         title: 'Japan’s virus success has puzzled the world. Is its luck running out?',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: sliderImg2,
+        image: '/img/header/sider-top2.jpg',
         title: 'Copa America: Luis Suarez from devastated US America',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: sliderImg1,
+        image: '/img/header/sider-top2.jpg',
         title: 'Japan’s virus success has puzzled the world. Is its luck running out?',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: sliderImg2,
+        image: '/img/header/sider-top2.jpg',
         title: 'Copa America: Luis Suarez from devastated US America',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: sliderImg1,
+        image: '/img/header/sider-top2.jpg',
         title: 'Japan’s virus success has puzzled the world. Is its luck running out?',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: sliderImg2,
+        image: '/img/header/sider-top2.jpg',
         title: 'Copa America: Luis Suarez from devastated US America',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…',
         category: 'TECHNOLOGY',
@@ -182,11 +192,18 @@ class PostGallery extends Component {
                                                     </div>
                                                     <div className="single_post_text">
                                                         <div className="meta meta_separator1">
-                                                            <Link to="#">{item.category}</Link>
-                                                            <Link to="#">{item.date}</Link>
+                                                            {/* <Link to="#"> */}
+                                                                {item.category}
+                                                            {/* </Link> */}
+                                                            {/* <Link to="#"> */}
+                                                                {item.date}
+                                                            {/* </Link> */}
                                                         </div>
-                                                        <h4><Link className="play_btn"
-                                                                  to="/video_post1">{item.title}</Link></h4>
+                                                        <h4>
+                                                            {/* <Link className="play_btn" to="/video_post1"> */}
+                                                                    {item.title}
+                                                            {/* </Link> */}
+                                                        </h4>
                                                         <div className="space-10"/>
                                                         <p className="post-p">{item.body}</p>
                                                     </div>

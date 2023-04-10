@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Heading from "../uiStyle/Heading";
-import Swiper from 'react-id-swiper';
+// import Swiper from 'react-id-swiper';
 
 import fnewsImg2 from '../../doc/img/feature/feature2.jpg';
 import fnewsImg3 from '../../doc/img/feature/feature3.jpg';
@@ -96,23 +96,24 @@ const FeatureNews = ({className}) => {
                     <div className="col-12">
                         {/*CAROUSEL START*/}
                         <div className="feature_carousel nav_style1">
-                            <Swiper getSwiper={setSwiper} {...params}>
+                            {/* <Swiper getSwiper={setSwiper} {...params}> */}
                                 {news.map((item, i) => (
-                                    <div key={i} className="single_post post_type6 post_type7">
-                                        <div className="post_img gradient1">
-                                            {/* <Link to="/"><img src={item.image} alt="thumb"/></Link> */}
-                                        </div>
-                                        <div className="single_post_text">
-                                            {/* <div className="meta5"><Link to="/">{item.category}</Link>
-                                                <Link to="/">{item.date}</Link>
-                                            </div> */}
-                                            <h4>
-                                                {/* <Link to="/post1">{item.title}</Link> */}
-                                            </h4>
-                                        </div>
-                                    </div>
+                                    <div></div>
+                                    // <div key={i} className="single_post post_type6 post_type7">
+                                    //     <div className="post_img gradient1">
+                                    //         {/* <Link to="/"><img src={item.image} alt="thumb"/></Link> */}
+                                    //     </div>
+                                    //     <div className="single_post_text">
+                                    //         {/* <div className="meta5"><Link to="/">{item.category}</Link>
+                                    //             <Link to="/">{item.date}</Link>
+                                    //         </div> */}
+                                    //         <h4>
+                                    //             {/* <Link to="/post1">{item.title}</Link> */}
+                                    //         </h4>
+                                    //     </div>
+                                    // </div>
                                 ))}
-                            </Swiper>
+                            {/* </Swiper> */}
                             <div className="navBtns">
                                 <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                                 <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>

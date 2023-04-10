@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import FooterCopyright from "../FooterCopyright";
 import FooterMoreNews from "../FooterMoreNews";
 import TwitterFeed from "../TwitterFeed";
@@ -21,16 +21,16 @@ const FooterArea = ({className}) => {
                     <div className="row">
                         <div className="col-md-6 align-self-center">
                             <div className="footer_logo logo">
-                                <Link to="/">
+                                {/* <Link to="/">
                                     <img src={flogo} alt="logo"/>
-                                </Link>
+                                </Link> */}
                             </div>
                             <div className="social2">
                                 <ul className="inline">
-                                    <li><Link to="#"><FontAwesome name="twitter"/></Link></li>
+                                    {/* <li><Link to="#"><FontAwesome name="twitter"/></Link></li>
                                     <li><Link to="#"><FontAwesome name="facebook-f"/></Link></li>
                                     <li><Link to="#"><FontAwesome name="youtube-play"/></Link></li>
-                                    <li><Link to="#"><FontAwesome name="instagram"/></Link></li>
+                                    <li><Link to="#"><FontAwesome name="instagram"/></Link></li> */}
                                 </ul>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ const FooterArea = ({className}) => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <ul>
-                                                <li><Link to="/">Crossword</Link>
+                                                {/* <li><Link to="/">Crossword</Link>
                                                 </li>
                                                 <li><Link to="/">Food</Link>
                                                 </li>
@@ -75,12 +75,12 @@ const FooterArea = ({className}) => {
                                                 <li><Link to="/">Magazine</Link>
                                                 </li>
                                                 <li><Link to="/">Weddings</Link>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </div>
                                         <div className="col-lg-6">
                                             <ul>
-                                                <li><Link to="/">Classifieds</Link>
+                                                {/* <li><Link to="/">Classifieds</Link>
                                                 </li>
                                                 <li><Link to="/">Photographies</Link>
                                                 </li>
@@ -93,7 +93,7 @@ const FooterArea = ({className}) => {
                                                 <li><Link to="/">Tools & Services</Link>
                                                 </li>
                                                 <li><Link to="/">My Account</Link>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </div>
                                     </div>
@@ -110,7 +110,7 @@ const FooterArea = ({className}) => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <ul>
-                                                <li><Link to="/">Today’s Opinion</Link>
+                                                {/* <li><Link to="/">Today’s Opinion</Link>
                                                 </li>
                                                 <li><Link to="/">Op-Ed Contributing</Link>
                                                 </li>
@@ -125,7 +125,7 @@ const FooterArea = ({className}) => {
                                                 <li><Link to="/">Saturday Review</Link>
                                                 </li>
                                                 <li><Link to="/">Product Review</Link>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </div>
                                     </div>

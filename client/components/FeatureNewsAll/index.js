@@ -3,7 +3,7 @@ import React from 'react';
 import fnewsImg2 from '../../doc/img/feature/feature2.jpg';
 import fnewsImg3 from '../../doc/img/feature/feature3.jpg';
 import fnewsImg4 from '../../doc/img/feature/feature4.jpg';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 const news = [
     {
@@ -75,15 +75,15 @@ const FeatureNewsAll = () => {
                 <div key={i} className="col-lg-6">
                     <div className="single_post post_type6 post_type7 mb30">
                         <div className="post_img gradient1">
-                            <Link to="/"><img src={item.image} alt="thumb"/></Link>
+                            {/* <Link to="/"><img src={item.image} alt="thumb"/></Link> */}
                         </div>
                         <div className="single_post_text">
-                            <div className="meta5"><Link to="/">{item.category}</Link>
+                            {/* <div className="meta5"><Link to="/">{item.category}</Link>
                                 <Link to="/">{item.date}</Link>
-                            </div>
-                            <h4>
+                            </div> */}
+                            {/* <h4>
                                 <Link to="/post1">{item.title}</Link>
-                            </h4>
+                            </h4> */}
                         </div>
                     </div>
                 </div>

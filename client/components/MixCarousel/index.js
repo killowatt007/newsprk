@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
-import Swiper from 'react-id-swiper';
+// import {Link} from "react-router-dom";
+// import Swiper from 'react-id-swiper';
 import ModalVideo from 'react-modal-video'
 
 import black_white1 from '../../doc/img/bg/black_white1.jpg';
@@ -85,7 +85,7 @@ const MixCarousel = ({className, dark}) => {
                         <div className={`mix_carousel ${dark ? 'primay_bg' : ''}`}>
                             {/*CAROUSEL START*/}
                             <div className="single_mix_carousel nav_style3">
-                                <Swiper getSwiper={setSwiper} {...params}>
+                                {/* <Swiper getSwiper={setSwiper} {...params}>
                                     {mixArray.map((item, i) => (
                                         <div key={i} className="single_post post_type6 post_type9">
                                             <div className="post_img gradient1">
@@ -106,7 +106,7 @@ const MixCarousel = ({className, dark}) => {
                                             </div>
                                         </div>
                                     ))}
-                                </Swiper>
+                                </Swiper> */}
                                 <div className="owl-nav">
                                     <div onClick={goPrev} className="owl-prev"><FontAwesome name="angle-left"/></div>
                                     <div onClick={goNext} className="owl-next"><FontAwesome name="angle-right"/></div>

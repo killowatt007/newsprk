@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import Swiper from 'react-id-swiper';
 import FontAwesome from "../uiStyle/FontAwesome";
 
@@ -76,15 +76,15 @@ const BusinessImageCarousel = () => {
                             <div key={i} className="single_post gradient1 post_type6 border-radious7 xs-mb30">
                                 <div className="post_img gradient1">
                                     <div className="img_wrap">
-                                        <Link to="/">
+                                        {/* <Link to="/">
                                             <img src={item.photo} alt="thumb"/>
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                                 <div className="single_post_text">
                                     <p className="meta meta_style4">Business <span>&nbsp;| &nbsp; March 26, 2020</span>
                                     </p>
-                                    <h4><Link to="/video_post1">{item.title}</Link></h4>
+                                    {/* <h4><Link to="/video_post1">{item.title}</Link></h4> */}
                                 </div>
                             </div>
                         ))}
@@ -104,11 +104,11 @@ const BusinessImageCarousel = () => {
                             <div className="single_post type10 type16 type22 widgets_small mb15">
                                 <div className="post_img">
                                     <div className="img_wrap">
-                                        <Link to="/"><img src={item.photo} alt="thumb"/></Link>
+                                        {/* <Link to="/"><img src={item.photo} alt="thumb"/></Link> */}
                                     </div>
                                 </div>
                                 <div className="single_post_text">
-                                    <h4><Link to="/">{item.title}</Link></h4>
+                                    {/* <h4><Link to="/">{item.title}</Link></h4> */}
                                 </div>
                             </div>
                             {i + 1 < populerPosts.length ? <Fragment>

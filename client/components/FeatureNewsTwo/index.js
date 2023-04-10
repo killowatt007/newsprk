@@ -4,7 +4,7 @@ import Swiper from 'react-id-swiper';
 import feature21 from '../../doc/img/feature/feature21.jpg';
 import feature22 from '../../doc/img/feature/feature22.jpg';
 import feature23 from '../../doc/img/feature/feature23.jpg';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 const feature_news = [
     {
@@ -91,9 +91,9 @@ const FeatureNewsTwo = () => {
                             <div key={i} className="single_post type19 border-radious5 white_bg">
                                 <div className="post_img">
                                     <div className="img_wrap">
-                                        <Link to="/">
+                                        {/* <Link to="/">
                                             <img src={item.photo} alt="thumb"/>
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                     <span className="batch3 date">
                                         {item.category}

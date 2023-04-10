@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import {Link} from "react-router-dom";
-import Swiper from 'react-id-swiper';
+// import Swiper from 'react-id-swiper';
 
 import trendbig1 from "../../doc/img/trending/trendbig1.jpg";
 import trendbig2 from "../../doc/img/trending/trendbig2.jpg";
@@ -69,7 +69,7 @@ const TrendingNewsSlider = () => {
     };
     return (
         <div className="carousel_post2_type3 nav_style1">
-            <Swiper getSwiper={setSwiper} className="trancarousel" {...params}>
+            {/* <Swiper getSwiper={setSwiper} className="trancarousel" {...params}>
                 {trendingNews.map((item, i) => (
                     <div key={i} className="single_post post_type3">
                         <div className="post_img">
@@ -88,7 +88,7 @@ const TrendingNewsSlider = () => {
                         </div>
                     </div>
                 ))}
-            </Swiper>
+            </Swiper> */}
             <div className="navBtns">
                 <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                 <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>

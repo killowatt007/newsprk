@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 
 const FollowUs = ({className='', title}) => {
@@ -7,7 +7,7 @@ const FollowUs = ({className='', title}) => {
         <div className={`follow_box widget mb30 ${className}`}>
             <h2 className="widget-title">{title}</h2>
             <div className="social_shares">
-                <Link className="single_social social_facebook" to="#">
+                {/* <Link className="single_social social_facebook" to="#">
                     <span className="follow_icon"><FontAwesome name="facebook-f"/></span>
                     34,456 <span className="icon_text">Fans</span>
                 </Link>
@@ -30,7 +30,7 @@ const FollowUs = ({className='', title}) => {
                 <Link className="single_social social_medium" to="#">
                     <span className="follow_icon"><FontAwesome name="medium"/></span>
                     34,456 <span className="icon_text">Followers</span>
-                </Link>
+                </Link> */}
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
 
@@ -68,23 +68,23 @@ const BusinessCarousel = () => {
                     <div key={i} className="business_carousel_items white_bg padding20 shadow7">
                         <div className="single_international">
                             <p className="meta before">{item.category}</p>
-                            <h4><Link to="/">{item.title}</Link></h4>
+                            {/* <h4><Link to="/">{item.title}</Link></h4> */}
                             <div className="row">
                                 <div className="col-8 align-self-center">
                                     <p>{item.description}</p>
                                 </div>
                                 <div className="col-4 align-self-center">
                                     <div className="img_wrap">
-                                        <Link to="/">
+                                        {/* <Link to="/">
                                             <img src={item.photo} alt="thumb"/>
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                             </div>
                             <ul className="mt20 like_cm">
-                                <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
+                                {/* <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
                                 <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                                <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li>
+                                <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li> */}
                             </ul>
                         </div>
                     </div>

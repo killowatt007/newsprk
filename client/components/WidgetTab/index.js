@@ -1,41 +1,41 @@
 import React, {Fragment, useState} from 'react';
 import {TabContent, TabPane, Nav, NavItem, Fade} from 'reactstrap';
 import classnames from 'classnames';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
-import thumb1 from '../../doc/img/header/widget/tab1.jpg';
-import thumb2 from '../../doc/img/header/widget/tab2.jpg';
-import thumb3 from '../../doc/img/header/widget/tab3.jpg';
-import thumb4 from '../../doc/img/header/widget/tab4.jpg';
-import thumb5 from '../../doc/img/header/widget/tab5.jpg';
+// import thumb1 from '../../doc/img/header/widget/tab1.jpg';
+// import thumb2 from '../../doc/img/header/widget/tab2.jpg';
+// import thumb3 from '../../doc/img/header/widget/tab3.jpg';
+// import thumb4 from '../../doc/img/header/widget/tab4.jpg';
+// import thumb5 from '../../doc/img/header/widget/tab5.jpg';
 
 const data = [
     {
-        image: thumb1,
+        image: '/img/header/widget/tab1.jpg',
         title: 'Copa America: Luis Suarez from devastated US',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: thumb2,
+        image: '/img/header/widget/tab2.jpg',
         title: 'Nancy Zhang a Chinese busy woman and Dhaka',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: thumb3,
+        image: '/img/header/widget/tab3.jpg',
         title: 'U.S. Response subash says he will label regions by risk of…',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: thumb4,
+        image: '/img/header/widget/tab4.jpg',
         title: 'Venezuela elan govt and opposit the property collect',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
     },
     {
-        image: thumb5,
+        image: '/img/header/widget/tab5.jpg',
         title: 'Cheap smartphone sensor could help you old food safe',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020'
@@ -51,16 +51,25 @@ const WidgetTabPane = ({arr, a_id, id, dark}) => {
                         <div className="single_post widgets_small">
                             <div className="post_img">
                                 <div className="img_wrap">
-                                    <Link to="/">
+                                    {/* <Link to="/"> */}
                                         <img src={item.image} alt="thumb"/>
-                                    </Link>
+                                    {/* </Link> */}
                                 </div>
                             </div>
                             <div className="single_post_text">
-                                <div className="meta2 meta_separator1"><Link to="#">{item.category}</Link>
-                                    <Link to="#">{item.date}</Link>
+                                <div className="meta2 meta_separator1">
+                                    {/* <Link to="#"> */}
+                                        {item.category}
+                                    {/* </Link> */}
+                                    {/* <Link to="#"> */}
+                                        {item.date}
+                                    {/* </Link> */}
                                 </div>
-                                <h4><Link to="/post1">{item.title}</Link></h4>
+                                <h4>
+                                    {/* <Link to="/post1"> */}
+                                        {item.title}
+                                    {/* </Link> */}
+                                </h4>
                             </div>
                         </div>
                         <div className="space-15"/>
@@ -84,37 +93,37 @@ const WidgetTab = ({className, dark}) => {
         <div className={`widget_tab md-mt-30 ${className}`}>
             <Nav tabs>
                 <NavItem>
-                    <Link
+                    {/* <Link
                         to="/"
                         className={classnames({active: activeTab === '1'})}
                         onClick={() => {
                             toggle('1');
                         }}
-                    >
+                    > */}
                         RELATED
-                    </Link>
+                    {/* </Link> */}
                 </NavItem>
                 <NavItem>
-                    <Link
+                    {/* <Link
                         to="/"
                         className={classnames({active: activeTab === '2'})}
                         onClick={() => {
                             toggle('2');
                         }}
-                    >
+                    > */}
                         RELATED
-                    </Link>
+                    {/* </Link> */}
                 </NavItem>
                 <NavItem>
-                    <Link
+                    {/* <Link
                         to="/"
                         className={classnames({active: activeTab === '3'})}
                         onClick={() => {
                             toggle('3');
                         }}
-                    >
+                    > */}
                         POPULAR
-                    </Link>
+                    {/* </Link> */}
                 </NavItem>
             </Nav>
             <TabContent activeTab={activeTab}>

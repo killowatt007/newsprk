@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-import Swiper from 'react-id-swiper';
+// import Swiper from 'react-id-swiper';
 import {mostViewSort} from "../../utils/commonFunctions";
 
 // images
@@ -89,7 +89,7 @@ const PopularPosts = () => {
             <h2 className="widget-title">Popular Posts</h2>
             <div className="popular_carousel pt-15 multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                <Swiper getSwiper={setSwiper} {...params}>
+                {/* <Swiper getSwiper={setSwiper} {...params}>
                     {mostViewSort(populerPOsts).map((item, i) => (
                         <div key={i} className="single_post type10 widgets_small mb15">
                             <div className="post_img">
@@ -107,7 +107,7 @@ const PopularPosts = () => {
                             </div>
                         </div>
                     ))}
-                </Swiper>
+                </Swiper> */}
                 <div className="navBtns">
                     <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                     <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>

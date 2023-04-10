@@ -17,40 +17,43 @@ import NewsLetter from "../components/NewsLetter";
 import CategoriesWidget from "../components/CategoriesWidget";
 
 // images
-import banner1 from '../doc/img/bg/banner1.png';
-import banner2 from '../doc/img/bg/sidebar-1.png';
-import business1 from '../doc/img/business/business1.jpg';
-import business2 from '../doc/img/business/business2.jpg';
-import business3 from '../doc/img/business/business3.jpg';
-import enter1 from '../doc/img/entertrainment/enter1.jpg';
-import enter2 from '../doc/img/entertrainment/enter2.jpg';
-import enter3 from '../doc/img/entertrainment/enter3.jpg';
-import enter4 from '../doc/img/entertrainment/enter4.jpg';
+// import banner1 from '../doc/img/bg/banner1.png';
+// import banner2 from '../doc/img/bg/sidebar-1.png';
+// import business1 from '../doc/img/business/business1.jpg';
+// import business2 from '../doc/img/business/business2.jpg';
+// import business3 from '../doc/img/business/business3.jpg';
+// import enter1 from '../doc/img/entertrainment/enter1.jpg';
+// import enter2 from '../doc/img/entertrainment/enter2.jpg';
+// import enter3 from '../doc/img/entertrainment/enter3.jpg';
+// import enter4 from '../doc/img/entertrainment/enter4.jpg';
+
+const banner1 = '/img/bg/banner1.png'
+const banner2 = '/img/bg/sidebar-1.png'
 
 const entertainments = [
     {
-        image: enter1,
+        image: '/img/entertrainment/enter1.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'There may be no consoles in the future ea exec says',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…'
     },
     {
-        image: enter2,
+        image: '/img/entertrainment/enter2.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'There may be no consoles in the future ea exec says',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…'
     },
     {
-        image: enter3,
+        image: '/img/entertrainment/enter3.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'There may be no consoles in the future ea exec says',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with sandy shower…'
     },
     {
-        image: enter4,
+        image: '/img/entertrainment/enter4.jpg',
         category: 'TECHNOLOGY',
         date: 'March 26, 2020',
         title: 'There may be no consoles in the future ea exec says',
@@ -60,21 +63,21 @@ const entertainments = [
 
 const businessNews = [
     {
-        image: business1,
+        image: '/img/business/business1.jpg',
         category: 'uiux.subash',
         date: 'March 26, 2020',
         title: 'Copa America: Luis Suarez from devastated US',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with…'
     },
     {
-        image: business2,
+        image: '/img/business/business2.jpg',
         category: 'uiux.subash',
         date: 'March 26, 2020',
         title: 'Copa America: Luis Suarez from devastated US',
         body: 'The property, complete with 30-seat screening from room, a 100-seat amphitheater and a swimming pond with…'
     },
     {
-        image: business3,
+        image: '/img/business/business3.jpg',
         category: 'uiux.subash',
         date: 'March 26, 2020',
         title: 'Copa America: Luis Suarez from devastated US',
@@ -123,9 +126,9 @@ const HomePage = () => {
                             {/*CAROUSEL END*/}
                             <SportsNews/>
                             <div className="banner_area mt50 mb60 xs-mt60">
-                                {/* <Link to="/">
+                                {/* <Link to="/"> */}
                                     <img src={banner1} alt="banner1"/>
-                                </Link> */}
+                                {/* </Link> */}
                             </div>
                             <BusinessNews businessNews={businessNews}/>
                         </div>
@@ -145,9 +148,9 @@ const HomePage = () => {
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="banner2 mb30">
-                                        {/* <Link to="/">
+                                        {/* <Link to="/"> */}
                                             <img src={banner2} alt="thumb"/>
-                                        </Link> */}
+                                        {/* </Link> */}
                                     </div>
                                 </div>
                             </div>
