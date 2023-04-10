@@ -1,7 +1,9 @@
 import React from 'react';
-// import {Link} from "react-router-dom";
+import {useRouter} from "next/router";
 
 const BusinessNews = ({businessNews, headerHide}) => {
+    const router = useRouter()
+
     return (
         <div className="row">
             <div className="col-12">
@@ -12,7 +14,7 @@ const BusinessNews = ({businessNews, headerHide}) => {
                                 <h2 className="widget-title">Business News</h2>
                             </div>
                             <div className="col-6 text-right align-self-center">
-                                {/* <Link to="/" className="see_all mb20">See All</Link> */}
+                                <a onClick={() => router.push('/')} className="see_all mb20">See All</a>
                             </div>
                         </div>}
                     <div className="row">
@@ -21,21 +23,21 @@ const BusinessNews = ({businessNews, headerHide}) => {
                                 <div key={i} className="single_post post_type3 post_type12 mb30">
                                     <div className="post_img">
                                         <div className="img_wrap">
-                                            {/* <Link to="/">
+                                            <a onClick={() => router.push('/')}>
                                                 <img src={item.image} alt="thumb"/>
-                                            </Link> */}
+                                            </a>
                                         </div>
                                     </div>
                                     <div className="single_post_text">
-                                        {/* <div className="meta3"><Link to="/">uiux.subash</Link>
-                                            <Link to="#">March 26, 2020</Link>
+                                        <div className="meta3"><a onClick={() => router.push('/')}>uiux.subash</a>
+                                            <a onClick={() => router.push('#')}>March 26, 2020</a>
                                         </div>
-                                        <h4><Link to="/post1">Copa America: Luis Suarez from devastated US</Link></h4>
+                                        <h4><a onClick={() => router.push('/post1')}>Copa America: Luis Suarez from devastated US</a></h4>
                                         <div className="space-10"/>
                                         <p className="post-p">The property, complete with 30-seat screening from room, a
                                             100-seat amphitheater and a swimming pond with…</p>
                                         <div className="space-20"/>
-                                        <Link to="/" className="readmore">Read more</Link> */}
+                                        <a onClick={() => router.push('/')} className="readmore">Read more</a>
                                     </div>
                                 </div>
                             ))}

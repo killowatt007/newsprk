@@ -1,31 +1,34 @@
 import React, {Fragment} from 'react';
 import {Link} from "react-router-dom";
+import {useRouter} from "next/router";
 
 const FooterNewsCategories = () => {
+    const router = useRouter()
+
     return (
         <Fragment>
             <h3 className="widget-title">News categories</h3>
             <div className="row">
                 <div className="col-lg-6">
                     <ul>
-                        <li><Link to="/">Politics</Link></li>
-                        <li><Link to="/">Business</Link></li>
-                        <li><Link to="/">TECHNOLOGY</Link></li>
-                        <li><Link to="/">Science</Link></li>
-                        <li><Link to="/">Health</Link></li>
-                        <li><Link to="/">Sports</Link></li>
-                        <li><Link to="/">Entertainment</Link></li>
+                        <li><a onClick={() => router.push('/')}>Politics</a></li>
+                        <li><a onClick={() => router.push('/')}>Business</a></li>
+                        <li><a onClick={() => router.push('/')}>TECHNOLOGY</a></li>
+                        <li><a onClick={() => router.push('/')}>Science</a></li>
+                        <li><a onClick={() => router.push('/')}>Health</a></li>
+                        <li><a onClick={() => router.push('/')}>Sports</a></li>
+                        <li><a onClick={() => router.push('/')}>Entertainment</a></li>
                     </ul>
                 </div>
                 <div className="col-lg-6">
                     <ul>
-                        <li><Link to="/">Education</Link></li>
-                        <li><Link to="/">Obituaries</Link></li>
-                        <li><Link to="/">Corrections</Link></li>
-                        <li><Link to="/">Education</Link></li>
-                        <li><Link to="/">Today’s Paper</Link></li>
-                        <li><Link to="/">Corrections</Link></li>
-                        <li><Link to="/">Foods</Link></li>
+                        <li><a onClick={() => router.push('/')}>Education</a></li>
+                        <li><a onClick={() => router.push('/')}>Obituaries</a></li>
+                        <li><a onClick={() => router.push('/')}>Corrections</a></li>
+                        <li><a onClick={() => router.push('/')}>Education</a></li>
+                        <li><a onClick={() => router.push('/')}>Today’s Paper</a></li>
+                        <li><a onClick={() => router.push('/')}>Corrections</a></li>
+                        <li><a onClick={() => router.push('/')}>Foods</a></li>
                     </ul>
                 </div>
             </div>

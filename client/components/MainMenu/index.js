@@ -1,9 +1,10 @@
 import React, {Fragment, useState} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import tempIcon from '../../doc/img/icon/temp.png';
-import {Link, NavLink} from "react-router-dom";
 import SearchModal from "../SearchModal";
 import SidebarMenu from "../SidebarMenu";
+import {useRouter} from "next/router";
+
+const tempIcon = '/img/icon/temp.png';
 
 const menus = [
     {
@@ -415,14 +416,15 @@ const menusDark = [
 const MainMenu = ({className, dark}) => {
     const [searchShow, setSearchShow] = useState(false);
     const [sideShow, setSideShow] = useState(false);
+    const router = useRouter()
 
     const arr = dark ? menusDark : menus;
     return (
         <Fragment>
             <div className={`main-menu ${className ? className : ''}`} id="header">
-                <Link to="#top" className="up_btn up_btn1">
+                <a onClick={() => router.push('#top')} className="up_btn up_btn1">
                     <FontAwesome name="chevron-double-up"/>
-                </Link>
+                </a>
                 <div className="main-nav clearfix is-ts-sticky">
                     <div className="container">
                         <div className="row justify-content-between">
@@ -439,14 +441,23 @@ const MainMenu = ({className, dark}) => {
                                                     className={`
                                                 ${item.child ? 'dropdown' : ''}
                                                 nav-item`}>
-                                                    {item.child ? <NavLink onClick={e => e.preventDefault()} to="/"
-                                                                           className="menu-dropdown"
-                                                                           data-toggle="dropdown">{item.linkText}
-                                                            <FontAwesome
-                                                                name={item.icon}/></NavLink>
-                                                        : <NavLink to={item.link} className="menu-dropdown"
-                                                                   data-toggle="dropdown">{item.linkText} <FontAwesome
-                                                            name={item.icon}/></NavLink>}
+                                                    {item.child 
+                                                        ? 
+                                                            <a 
+                                                                onClick={() => router.push('/')}
+                                                                className="menu-dropdown"
+                                                                data-toggle="dropdown">
+                                                                {item.linkText}
+                                                            <FontAwesome name={item.icon}/>
+                                                            </a>
+                                                        : 
+                                                            <a 
+                                                                onClick={() => router.push(item.link)}
+                                                                className="menu-dropdown"
+                                                                data-toggle="dropdown">{item.linkText} 
+                                                            <FontAwesome name={item.icon}/>
+                                                            </a>
+                                                    }
 
                                                     {item.child ?
                                                         <ul className="dropdown-menu" role="menu">
@@ -454,16 +465,25 @@ const MainMenu = ({className, dark}) => {
                                                                 <li key={i}
                                                                     className={`${sub_item.child ? 'dropdown-submenu' : null}
                                                         `}>
-                                                                    {sub_item.child ?
-                                                                        <NavLink onClick={e => e.preventDefault()}
-                                                                                 to="/">{sub_item.linkText}</NavLink>
-                                                                        : <NavLink
-                                                                            to={sub_item.link}>{sub_item.linkText}</NavLink>}
+                                                                    {sub_item.child 
+                                                                        ?
+                                                                            <a 
+                                                                                onClick={() => router.push('/')}>
+                                                                            {sub_item.linkText}
+                                                                            </a>
+                                                                        : 
+                                                                            <a
+                                                                                onClick={() => router.push(sub_item.link)}>
+                                                                            {sub_item.linkText}
+                                                                            </a>
+                                                                    }
                                                                     {sub_item.third_menu ?
                                                                         <ul className="dropdown-menu">
                                                                             {sub_item.third_menu.map((third_item, i) => (
-                                                                                <li key={i}><NavLink
-                                                                                    to={third_item.link}>{third_item.linkText}</NavLink>
+                                                                                <li key={i}>
+                                                                                    <a onClick={() => router.push(third_item.link)}>
+                                                                                        {third_item.linkText}
+                                                                                    </a>
                                                                                 </li>
                                                                             ))}
                                                                         </ul> : null}
@@ -476,7 +496,7 @@ const MainMenu = ({className, dark}) => {
                                             )) : null}
                                         </ul>
                                     </div>
-                                    <SidebarMenu sideShow={sideShow} setSideShow={setSideShow} menus={arr}/>
+                                    {/* <SidebarMenu sideShow={sideShow} setSideShow={setSideShow} menus={arr}/> */}
                                 </div>
                             </nav>
                             <div className="col-lg-4 align-self-center">
@@ -490,15 +510,15 @@ const MainMenu = ({className, dark}) => {
                                     </div>
                                     <div className="lang d-none d-xl-block">
                                         <ul>
-                                            <li><Link to="/">English <FontAwesome name="angle-down"/></Link>
+                                            <li><a onClick={() => router.push('/')}>English <FontAwesome name="angle-down"/></a>
                                                 <ul>
-                                                    <li><Link to="/">Spanish</Link>
+                                                    <li><a onClick={() => router.push('/')}>Spanish</a>
                                                     </li>
-                                                    <li><Link to="/">China</Link>
+                                                    <li><a onClick={() => router.push('/')}>China</a>
                                                     </li>
-                                                    <li><Link to="/">Hindi</Link>
+                                                    <li><a onClick={() => router.push('/')}>Hindi</a>
                                                     </li>
-                                                    <li><Link to="/">Corian</Link>
+                                                    <li><a onClick={() => router.push('/')}>Corian</a>
                                                     </li>
                                                 </ul>
                                             </li>

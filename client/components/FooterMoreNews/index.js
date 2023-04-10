@@ -1,9 +1,10 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
+import {useRouter} from "next/router";
 
-import mobile from '../../doc/img/icon/mobile.png';
-import speaker from '../../doc/img/icon/speacker.png';
-import envelope from '../../doc/img/icon/evelope.png';
+const mobile = '/img/icon/mobile.png';
+const speaker = '/img/icon/speacker.png';
+const envelope = '/img/icon/evelope.png';
 
 const news = [
     {
@@ -34,13 +35,15 @@ const news = [
 ];
 
 const FooterMoreNews = () => {
+    const router = useRouter()
+
     return (
         <div className="extra_newss border_white_left pl-4">
             <h3 className="widget-title2">More news</h3>
             {news.map((item, i) => (
                 <div key={i} className="single_extra_news border_white_bottom">
                     <p>{item.category} <span> / {item.date}</span></p>
-                    <Link to="/">{item.title}</Link>
+                    <a onClick={() => router.push('/')}>{item.title}</a>
                     <span className="news_counter">{i + 1}</span>
                 </div>
             ))}
@@ -53,19 +56,19 @@ const FooterMoreNews = () => {
                     <div className="fcicon">
                         <img src={mobile} alt="mobile"/>
                     </div>
-                    <Link to="/">On your mobile</Link>
+                    <a onClick={() => router.push('/')}>On your mobile</a>
                 </div>
                 <div className="single_fcontact">
                     <div className="fcicon">
                         <img src={speaker} alt="speaker"/>
                     </div>
-                    <Link to="/">On smart speakers</Link>
+                    <a onClick={() => router.push('/')}>On smart speakers</a>
                 </div>
                 <div className="single_fcontact">
                     <div className="fcicon">
                         <img src={envelope} alt="evelope"/>
                     </div>
-                    <Link to="/">Contact Newspark news</Link>
+                    <a onClick={() => router.push('/')}>Contact Newspark news</a>
                 </div>
             </div>
         </div>

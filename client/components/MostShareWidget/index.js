@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-// import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-// import Swiper from 'react-id-swiper';
+import Swiper from 'react-id-swiper';
+import {useRouter} from "next/router";
 
 // images
 import {mostViewSort} from "../../utils/commonFunctions";
@@ -61,6 +61,7 @@ const mostView = [
 
 const MostShareWidget = ({title, dark}) => {
     const [swiper, setSwiper] = useState(null);
+    const router = useRouter()
 
     const goNext = () => {
         if (swiper !== null) {
@@ -83,7 +84,7 @@ const MostShareWidget = ({title, dark}) => {
             <h2 className="widget-title">{title ? title : 'Most View'}</h2>
             <div className="post_type2_carousel multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                {/* <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper getSwiper={setSwiper} {...params}>
                     {mostViewSort(mostView).map((item, i) => (
                         <div key={i} className="carousel_items">
                             <div className="single_post widgets_small widgets_type4">
@@ -91,13 +92,13 @@ const MostShareWidget = ({title, dark}) => {
                                     <h2>{item.id}</h2>
                                 </div>
                                 <div className="single_post_text">
-                                    <div className="meta2"><Link to="#">TECHNOLOGY</Link>
-                                        <Link to="#">March 26, 2020</Link>
+                                    <div className="meta2"><a onClick={() => router.push('#')}>TECHNOLOGY</a>
+                                        <a onClick={() => router.push('#')}>March 26, 2020</a>
                                     </div>
-                                    <h4><Link to="/post1">Nancy zhang a chinese busy woman and dhaka</Link></h4>
+                                    <h4><a onClick={() => router.push('/post1')}>Nancy zhang a chinese busy woman and dhaka</a></h4>
                                     <ul className="inline socail_share">
-                                        <li><Link to="#"><FontAwesome name="twitter"/>2.2K</Link></li>
-                                        <li><Link to="#"><FontAwesome name="facebook-f"/>2.2K</Link></li>
+                                        <li><a onClick={() => router.push('#')}><FontAwesome name="twitter"/>2.2K</a></li>
+                                        <li><a onClick={() => router.push('#')}><FontAwesome name="facebook-f"/>2.2K</a></li>
                                     </ul>
                                     <div className="space-15"/>
                                     {dark ? <div className="border_white"/> : <div className="border_black"/>}
@@ -106,7 +107,7 @@ const MostShareWidget = ({title, dark}) => {
                             <div className="space-15"/>
                         </div>
                     ))}
-                </Swiper> */}
+                </Swiper>
                 <div className="navBtns">
                     <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                     <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>

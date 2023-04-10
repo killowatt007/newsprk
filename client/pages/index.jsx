@@ -8,24 +8,25 @@ import MostView from "../components/MostView";
 import MixCarousel from "../components/MixCarousel";
 import VideoPost from "../components/VideoPost";
 import EntertainmentNews from "../components/EntertainmentNews";
-import {Link} from "react-router-dom";
 import SportsNews from "../components/SportsNews";
 import BusinessNews from "../components/BusinessNews";
 import MostShareWidget from "../components/MostShareWidget";
 import UpcomingMatches from "../components/UpcomingMatches";
 import NewsLetter from "../components/NewsLetter";
 import CategoriesWidget from "../components/CategoriesWidget";
+import {useRouter} from "next/router";
 
-// images
-// import banner1 from '../doc/img/bg/banner1.png';
-// import banner2 from '../doc/img/bg/sidebar-1.png';
-// import business1 from '../doc/img/business/business1.jpg';
-// import business2 from '../doc/img/business/business2.jpg';
-// import business3 from '../doc/img/business/business3.jpg';
-// import enter1 from '../doc/img/entertrainment/enter1.jpg';
-// import enter2 from '../doc/img/entertrainment/enter2.jpg';
-// import enter3 from '../doc/img/entertrainment/enter3.jpg';
-// import enter4 from '../doc/img/entertrainment/enter4.jpg';
+// import {useRouter} from "next/router";
+// const router = useRouter()
+// onClick={() => router.push('/')}
+
+
+import TopBar from "../components/TopBar";
+import LogoArea from "../components/LogoArea";
+import MainMenu from "../components/MainMenu";
+import FooterArea from "../components/FooterArea";
+
+
 
 const banner1 = '/img/bg/banner1.png'
 const banner2 = '/img/bg/sidebar-1.png'
@@ -86,8 +87,16 @@ const businessNews = [
 ];
 
 const HomePage = () => {
+    const router = useRouter()
+
     return (
         <div className="theme-1">
+
+            <TopBar className="white_bg"/>
+            <div className="border_black"/>
+            <LogoArea className="white_bg"/>
+            <MainMenu/>
+
             <PostCarousel className="fifth_bg"/>
             <PostGallery className="fifth_bg"/>
             <FeatureNews/>
@@ -126,9 +135,7 @@ const HomePage = () => {
                             {/*CAROUSEL END*/}
                             <SportsNews/>
                             <div className="banner_area mt50 mb60 xs-mt60">
-                                {/* <Link to="/"> */}
-                                    <img src={banner1} alt="banner1"/>
-                                {/* </Link> */}
+                                <img onClick={() => router.push('/')} src={banner1} alt="banner1"/>
                             </div>
                             <BusinessNews businessNews={businessNews}/>
                         </div>
@@ -148,9 +155,7 @@ const HomePage = () => {
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="banner2 mb30">
-                                        {/* <Link to="/"> */}
-                                            <img src={banner2} alt="thumb"/>
-                                        {/* </Link> */}
+                                        <img onClick={() => router.push('/')} src={banner2} alt="thumb"/>
                                     </div>
                                 </div>
                             </div>
@@ -159,6 +164,7 @@ const HomePage = () => {
                 </div>
             </div>
             <div className="space-70"/>
+            <FooterArea className="primay_bg"/>
         </div>
     );
 };

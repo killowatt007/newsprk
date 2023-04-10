@@ -1,14 +1,8 @@
 import React, {Fragment} from 'react';
 import Heading from "../uiStyle/Heading";
 import TrendingNewsSlider from "../TrendingNewsSlider";
-// import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-
-// import transm1 from '../../doc/img/trending/transm1.jpg';
-// import transm2 from '../../doc/img/trending/transm2.jpg';
-// import transm4 from '../../doc/img/trending/transm4.jpg';
-// import transm5 from '../../doc/img/trending/transm5.jpg';
-// import transm6 from '../../doc/img/trending/transm6.jpg';
+import {useRouter} from "next/router";
 
 const trendingNews = [
     {
@@ -50,6 +44,8 @@ const trendingNews = [
 ];
 
 const TrendingNews = ({dark}) => {
+    const router = useRouter()
+
     return (
         <Fragment>
             <Heading title="Trending News"/>
@@ -71,17 +67,17 @@ const TrendingNews = ({dark}) => {
                                 </div>
                                 <div className="single_post_text">
                                     <div className="meta2">
-                                        {/* <Link to="/"> */}
+                                        <a onClick={() => router.push('/')}>
                                             {item.category}
-                                        {/* </Link> */}
-                                        {/* <Link to="/"> */}
+                                        </a>
+                                        <a onClick={() => router.push('/')}>
                                             {item.date}
-                                        {/* </Link> */}
+                                        </a>
                                     </div>
                                     <h4>
-                                        {/* <Link to="/post1"> */}
+                                        <a onClick={() => router.push('post1')}>
                                             {item.title}
-                                        {/* </Link> */}
+                                        </a>
                                     </h4>
                                 </div>
                             </div>
@@ -105,17 +101,17 @@ const TrendingNews = ({dark}) => {
                                 </div>
                                 <div className="single_post_text">
                                     <div className="meta2">
-                                        {/* <Link to="/"> */}
+                                        <a onClick={() => router.push('/')}>
                                             {item.category}
-                                        {/* </Link> */}
-                                        {/* <Link to="/"> */}
+                                        </a>
+                                        <a onClick={() => router.push('/')}>
                                             {item.date}
-                                        {/* </Link> */}
+                                        </a>
                                     </div>
                                     <h4>
-                                        {/* <Link to="/post1"> */}
+                                        <a onClick={() => router.push('/post1')}>
                                             {item.title}
-                                        {/* </Link> */}
+                                        </a>
                                     </h4>
                                 </div>
                             </div>

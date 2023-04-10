@@ -1,19 +1,19 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-// import Swiper from 'react-id-swiper';
+import Swiper from 'react-id-swiper';
+import {useRouter} from "next/router";
 
 // images
-import sports2 from '../../doc/img/sports/sports2.jpg';
-import sports3 from '../../doc/img/sports/sports3.jpg';
-import sports4 from '../../doc/img/sports/sports4.jpg';
-import sports5 from '../../doc/img/sports/sports5.jpg';
-import sports6 from '../../doc/img/sports/sports6.jpg';
-import blog_small1 from '../../doc/img/blog/blog_small1.jpg';
-import blog_small2 from '../../doc/img/blog/blog_small2.jpg';
-import blog_small3 from '../../doc/img/blog/blog_small3.jpg';
-import blog_small4 from '../../doc/img/blog/blog_small4.jpg';
-import blog_small5 from '../../doc/img/blog/blog_small5.jpg';
+const sports2 = '/img/sports/sports2.jpg';
+const sports3 = '/img/sports/sports3.jpg';
+const sports4 = '/img/sports/sports4.jpg';
+const sports5 = '/img/sports/sports5.jpg';
+const sports6 = '/img/sports/sports6.jpg';
+const blog_small1 = '/img/blog/blog_small1.jpg';
+const blog_small2 = '/img/blog/blog_small2.jpg';
+const blog_small3 = '/img/blog/blog_small3.jpg';
+const blog_small4 = '/img/blog/blog_small4.jpg';
+const blog_small5 = '/img/blog/blog_small5.jpg';
 
 import {mostViewSort} from "../../utils/commonFunctions";
 
@@ -82,6 +82,7 @@ const mostView = [
 
 const SportsCarousel = ({dark}) => {
     const [swiper, setSwiper] = useState(null);
+    const router = useRouter()
 
     const goNext = () => {
         if (swiper !== null) {
@@ -103,21 +104,21 @@ const SportsCarousel = ({dark}) => {
         <div className="widget tab_widgets">
             <div className="post_type2_carousel multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                {/* <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper getSwiper={setSwiper} {...params}>
                     {mostViewSort(mostView).map((item, i) => (
                         <div key={i} className="single_post2_carousel">
                             <div className="single_post widgets_small">
                                 <div className="post_img">
                                     <div className="img_wrap">
-                                        <Link to="/"><img src={item.image} alt="thumb"/></Link>
+                                        <a onClick={() => router.push('/')}><img src={item.image} alt="thumb"/></a>
                                     </div>
                                     <span className="tranding"><FontAwesome name="bolt"/></span>
                                 </div>
                                 <div className="single_post_text">
-                                    <div className="meta2"><Link to="/">{item.category}</Link>
-                                        <Link to="/">{item.date}</Link>
+                                    <div className="meta2"><a onClick={() => router.push('/')}>{item.category}</a>
+                                        <a onClick={() => router.push('/')}>{item.date}</a>
                                     </div>
-                                    <h4><Link to="/post1">{item.title}</Link></h4>
+                                    <h4><a onClick={() => router.push('/post1')}>{item.title}</a></h4>
                                 </div>
                             </div>
                             <div className="space-15"/>
@@ -125,7 +126,7 @@ const SportsCarousel = ({dark}) => {
                             <div className="space-15"/>
                         </div>
                     ))}
-                </Swiper> */}
+                </Swiper>
                 <div className="navBtns">
                     <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                     <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>

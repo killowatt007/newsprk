@@ -1,13 +1,13 @@
 import React, {Fragment} from 'react';
-// import {Link} from "react-router-dom";
 import {CircleSlider} from "react-circle-slider";
+import {useRouter} from "next/router";
 
 // images
-import match1 from '../../doc/img/flag/match1.png';
-import match2 from '../../doc/img/flag/match2.png';
-import match3 from '../../doc/img/flag/match3.png';
-import match4 from '../../doc/img/flag/match4.png';
-import match5 from '../../doc/img/flag/match5.png';
+const match1 = '/img/flag/match1.png';
+const match2 = '/img/flag/match2.png';
+const match3 = '/img/flag/match3.png';
+const match4 = '/img/flag/match4.png';
+const match5 = '/img/flag/match5.png';
 
 const matches = [
     {
@@ -48,6 +48,8 @@ const matches = [
 ];
 
 const UpcomingMatches = ({dark}) => {
+    const router = useRouter()
+
     return (
         <div className="widget upcomming_macth mb30">
             <div className="row">
@@ -55,26 +57,26 @@ const UpcomingMatches = ({dark}) => {
                     <h2 className="widget-title">Upcoming Matches</h2>
                 </div>
                 <div className="col-4 text-right align-self-center">
-                    {/* <Link to="#" className="see_all mb20">See All</Link> */}
+                    <a onClick={() => router.push('#')} className="see_all mb20">See All</a>
                 </div>
             </div>
             {matches.map((item, i) => (
                 <Fragment key={i}>
                     <div className="single_post post_type13 widgets_small">
                         <div className="post_img">
-                            {/* <Link to="/">
+                            <a onClick={() => router.push('/')}>
                                 <img src={item.image} alt="icon"/>
-                            </Link> */}
+                            </a>
                         </div>
                         <div className="single_post_text">
-                            {/* <h4><Link to="/" className="playing_teams">
+                            <h4><a onClick={() => router.push('/')} className="playing_teams">
                                 {item.countries.map((country, i) => (
                                     <Fragment key={i}>
                                         {country}{' '}
                                         {(i + 1) < item.countries.length ? <span>VS &nbsp;</span> : null}
                                     </Fragment>
                                 ))}
-                            </Link></h4> */}
+                            </a></h4>
                             <p className="meta macth_meta">
                                 {item.date} &nbsp;|&nbsp;<span> {item.time} </span> &nbsp;
                             </p>
@@ -90,7 +92,7 @@ const UpcomingMatches = ({dark}) => {
                                 progressWidth={5}
                                 circleWidth={5}
                             />
-                            {/*<div className="first_circle circle"/>*/}
+                            <div className="first_circle circle"/>
                         </div>
                     </div>
                     <div className="space-10"/>

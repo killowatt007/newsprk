@@ -1,13 +1,7 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
 import Swiper from 'react-id-swiper';
-// import hside4 from '../doc/img/header/slider/hside4.jpg';
-// import hside5 from '../doc/img/header/slider/hside5.jpg';
-// import hside6 from '../doc/img/header/slider/hside6.jpg';
-// import hside1 from '../doc/img/header/slider/hside1.jpg';
-// import hside2 from '../doc/img/header/slider/hside2.jpg';
-// import hside3 from '../doc/img/header/slider/hside3.jpg';
 import FontAwesome from "../uiStyle/FontAwesome";
+import {useRouter} from "next/router";
 
 const postSlider = [
     {
@@ -44,6 +38,7 @@ const postSlider = [
 
 const PostCarousel = ({className}) => {
     const [swiper, setSwiper] = useState(null);
+    const router = useRouter()
 
     const goNext = () => {
         if (swiper !== null) {
@@ -92,16 +87,16 @@ const PostCarousel = ({className}) => {
                                         <div key={i} className="single_post widgets_small post_type5">
                                             <div className="post_img">
                                                 <div className="img_wrap">
-                                                    {/* <Link to="/"> */}
+                                                    <a onClick={() => router.push('/')}>
                                                         <img src={item.image} alt="slider5"/>
-                                                    {/* </Link> */}
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div className="single_post_text">
                                                 <h4>
-                                                    {/* <Link to="/post1"> */}
+                                                    <a onClick={() => router.push('/post1')}>
                                                         {item.title}
-                                                    {/* </Link> */}
+                                                    </a>
                                                 </h4>
                                                 <p>{item.body}</p>
                                             </div>

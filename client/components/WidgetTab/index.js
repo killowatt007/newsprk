@@ -2,6 +2,7 @@ import React, {Fragment, useState} from 'react';
 import {TabContent, TabPane, Nav, NavItem, Fade} from 'reactstrap';
 import classnames from 'classnames';
 // import {Link} from "react-router-dom";
+import {useRouter} from "next/router";
 
 // import thumb1 from '../../doc/img/header/widget/tab1.jpg';
 // import thumb2 from '../../doc/img/header/widget/tab2.jpg';
@@ -43,6 +44,8 @@ const data = [
 ];
 
 const WidgetTabPane = ({arr, a_id, id, dark}) => {
+    const router = useRouter()
+
     return (
         <Fade in={id === a_id}>
             <div className="widget tab_widgets">
@@ -51,24 +54,24 @@ const WidgetTabPane = ({arr, a_id, id, dark}) => {
                         <div className="single_post widgets_small">
                             <div className="post_img">
                                 <div className="img_wrap">
-                                    {/* <Link to="/"> */}
+                                    <a onClick={() => router.push('/')}>
                                         <img src={item.image} alt="thumb"/>
-                                    {/* </Link> */}
+                                    </a>
                                 </div>
                             </div>
                             <div className="single_post_text">
                                 <div className="meta2 meta_separator1">
-                                    {/* <Link to="#"> */}
+                                    <a onClick={() => router.push('/')}>
                                         {item.category}
-                                    {/* </Link> */}
-                                    {/* <Link to="#"> */}
+                                    </a>
+                                    <a onClick={() => router.push('/')}>
                                         {item.date}
-                                    {/* </Link> */}
+                                    </a>
                                 </div>
                                 <h4>
-                                    {/* <Link to="/post1"> */}
+                                    <a onClick={() => router.push('/')}>
                                         {item.title}
-                                    {/* </Link> */}
+                                    </a>
                                 </h4>
                             </div>
                         </div>
@@ -89,42 +92,35 @@ const WidgetTab = ({className, dark}) => {
         if (activeTab !== tab) setActiveTab(tab);
     };
 
+    
     return (
         <div className={`widget_tab md-mt-30 ${className}`}>
             <Nav tabs>
-                <NavItem>
-                    {/* <Link
-                        to="/"
+                    <li class="nav-item"><a
                         className={classnames({active: activeTab === '1'})}
                         onClick={() => {
                             toggle('1');
                         }}
-                    > */}
+                    >
                         RELATED
-                    {/* </Link> */}
-                </NavItem>
-                <NavItem>
-                    {/* <Link
-                        to="/"
+                    </a></li>
+                    <li class="nav-item"><a
                         className={classnames({active: activeTab === '2'})}
                         onClick={() => {
                             toggle('2');
                         }}
-                    > */}
+                    >
                         RELATED
-                    {/* </Link> */}
-                </NavItem>
-                <NavItem>
-                    {/* <Link
-                        to="/"
+                        </a></li>
+                    <li class="nav-item"><a
+
                         className={classnames({active: activeTab === '3'})}
                         onClick={() => {
                             toggle('3');
                         }}
-                    > */}
+                    >
                         POPULAR
-                    {/* </Link> */}
-                </NavItem>
+                        </a></li>
             </Nav>
             <TabContent activeTab={activeTab}>
                 <TabPane tabId='1'><WidgetTabPane dark={dark} a_id={activeTab} id="1" arr={data}/></TabPane>

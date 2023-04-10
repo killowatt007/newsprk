@@ -1,14 +1,14 @@
 import React, {Fragment, useState} from 'react';
-// import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-// import Swiper from 'react-id-swiper';
+import Swiper from 'react-id-swiper';
+import {useRouter} from "next/router";
 
 // images
-import mostsm1 from '../../doc/img/most_view/mostsm1.jpg';
-import mostsm2 from '../../doc/img/most_view/mostsm2.jpg';
-import mostsm3 from '../../doc/img/most_view/mostsm3.jpg';
-import mostsm4 from '../../doc/img/most_view/mostsm4.jpg';
-import mostsm5 from '../../doc/img/most_view/mostsm5.jpg';
+const mostsm1 = '/img/most_view/mostsm1.jpg';
+const mostsm2 = '/img/most_view/mostsm2.jpg';
+const mostsm3 = '/img/most_view/mostsm3.jpg';
+const mostsm4 = '/img/most_view/mostsm4.jpg';
+const mostsm5 = '/img/most_view/mostsm5.jpg';
 import {mostViewSort} from "../../utils/commonFunctions";
 
 const mostView = [
@@ -88,6 +88,7 @@ const mostView = [
 
 const MostView = ({no_margin, title, dark}) => {
     const [swiper, setSwiper] = useState(null);
+    const router = useRouter()
 
     const goNext = () => {
         if (swiper !== null) {
@@ -110,7 +111,7 @@ const MostView = ({no_margin, title, dark}) => {
             <h2 className="widget-title">{title ? title : 'Most View'}</h2>
             <div className="post_type2_carousel multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                {/* <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper getSwiper={setSwiper} {...params}>
                     {mostViewSort(mostView).map((item, i) => (
                         <div key={i} className="single_post2_carousel">
                             <div className="single_post widgets_small type8">
@@ -123,10 +124,10 @@ const MostView = ({no_margin, title, dark}) => {
 									</span>
                                 </div>
                                 <div className="single_post_text">
-                                    <div className="meta2"><Link to="/">{item.category}</Link>
-                                        <Link to="/">{item.date}</Link>
+                                    <div className="meta2"><a onClick={() => router.push('/')}>{item.category}</a>
+                                        <a onClick={() => router.push('/')}>{item.date}</a>
                                     </div>
-                                    <h4><Link to="/post1">{item.title}</Link></h4>
+                                    <h4><a onClick={() => router.push('/post1')}>{item.title}</a></h4>
                                 </div>
                                 <div className="type8_count">
                                     <h2>{item.id}</h2>
@@ -139,7 +140,7 @@ const MostView = ({no_margin, title, dark}) => {
                             </Fragment> : null}
                         </div>
                     ))}
-                </Swiper> */}
+                </Swiper>
                 <div className="navBtns">
                     <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                     <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>

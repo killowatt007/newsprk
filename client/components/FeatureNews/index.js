@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
 import Heading from "../uiStyle/Heading";
 import Swiper from 'react-id-swiper';
-
-// import fnewsImg2 from '../../doc/img/feature/feature2.jpg';
-// import fnewsImg3 from '../../doc/img/feature/feature3.jpg';
-// import fnewsImg4 from '../../doc/img/feature/feature4.jpg';
-// import {Link} from "react-router-dom";
+import {useRouter} from "next/router";
 import FontAwesome from "../uiStyle/FontAwesome";
 
 const news = [
@@ -49,6 +45,7 @@ const news = [
 
 const FeatureNews = ({className}) => {
     const [swiper, setSwiper] = useState(null);
+    const router = useRouter()
 
     const goNext = () => {
         if (swiper !== null) {
@@ -100,23 +97,23 @@ const FeatureNews = ({className}) => {
                                 {news.map((item, i) => (
                                     <div key={i} className="single_post post_type6 post_type7">
                                         <div className="post_img gradient1">
-                                            {/* <Link to="/"> */}
+                                            <a onClick={() => router.push('/')}>
                                                 <img src={item.image} alt="thumb"/>
-                                            {/* </Link> */}
+                                            </a>
                                         </div>
                                         <div className="single_post_text">
                                             <div className="meta5">
-                                                {/* <Link to="/"> */}
+                                                <a onClick={() => router.push('/')}>
                                                     {item.category}
-                                                {/* </Link> */}
-                                                {/* <Link to="/"> */}
+                                                </a>
+                                                <a onClick={() => router.push('/')}>
                                                     {item.date}
-                                                {/* </Link> */}
+                                                </a>
                                             </div>
                                             <h4>
-                                                {/* <Link to="/post1"> */}
+                                                <a onClick={() => router.push('/')}>
                                                     {item.title}
-                                                {/* </Link> */}
+                                                </a>
                                             </h4>
                                         </div>
                                     </div>

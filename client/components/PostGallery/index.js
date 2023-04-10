@@ -1,21 +1,8 @@
 import React, {Component} from 'react';
-// import {Link} from "react-router-dom";
 import WidgetTab from "../WidgetTab";
 import Slider from "react-slick";
-// import "../node_modules/slick-carousel/slick/slick.css";
 import FontAwesome from "../uiStyle/FontAwesome";
 import ModalVideo from 'react-modal-video'
-
-// images
-// import gsil1 from '../../doc/img/blog/post_gsi1.jpg';
-// import gsil2 from '../../doc/img/blog/post_gsi2.jpg';
-// import gsil3 from '../../doc/img/blog/post_gsi3.jpg';
-// import gsil4 from '../../doc/img/blog/post_gsi4.jpg';
-// import gsil5 from '../../doc/img/blog/post_gsi5.jpg';
-// import gsil6 from '../../doc/img/blog/post_gsi6.jpg';
-// import gsil7 from '../../doc/img/blog/post_gsi7.jpg';
-// import sliderImg1 from '../../doc/img/header/sider-top.jpg';
-// import sliderImg2 from '../../doc/img/header/sider-top2.jpg';
 
 const thumbs = [
     '/img/blog/post_gsi1.jpg',
@@ -192,17 +179,17 @@ class PostGallery extends Component {
                                                     </div>
                                                     <div className="single_post_text">
                                                         <div className="meta meta_separator1">
-                                                            {/* <Link to="#"> */}
+                                                            <a onClick={() => router.push('#')}>
                                                                 {item.category}
-                                                            {/* </Link> */}
-                                                            {/* <Link to="#"> */}
+                                                            </a>
+                                                            <a onClick={() => router.push('#')}>
                                                                 {item.date}
-                                                            {/* </Link> */}
+                                                            </a>
                                                         </div>
                                                         <h4>
-                                                            {/* <Link className="play_btn" to="/video_post1"> */}
-                                                                    {item.title}
-                                                            {/* </Link> */}
+                                                            <a className="play_btn" onClick={() => router.push('/video_post1')}>
+                                                                {item.title}
+                                                            </a>
                                                         </h4>
                                                         <div className="space-10"/>
                                                         <p className="post-p">{item.body}</p>

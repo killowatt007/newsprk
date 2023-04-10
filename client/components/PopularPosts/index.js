@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
 import FontAwesome from "../uiStyle/FontAwesome";
-// import Swiper from 'react-id-swiper';
+import Swiper from 'react-id-swiper';
 import {mostViewSort} from "../../utils/commonFunctions";
+import {useRouter} from "next/router";
 
 // images
-import popularsm1 from '../../doc/img/popular/popularsm1.jpg';
-import popularsm2 from '../../doc/img/popular/popularsm2.jpg';
-import popularsm3 from '../../doc/img/popular/popularsm3.jpg';
-import popularsm4 from '../../doc/img/popular/popularsm4.jpg';
-import popularsm5 from '../../doc/img/popular/popularsm5.jpg';
+const popularsm1 = '/img/popular/popularsm1.jpg';
+const popularsm2 = '/img/popular/popularsm2.jpg';
+const popularsm3 = '/img/popular/popularsm3.jpg';
+const popularsm4 = '/img/popular/popularsm4.jpg';
+const popularsm5 = '/img/popular/popularsm5.jpg';
 
 const populerPOsts = [
     {
@@ -66,6 +66,7 @@ const populerPOsts = [
 
 const PopularPosts = () => {
     const [swiper, setSwiper] = useState(null);
+    const router = useRouter()
 
     const goNext = () => {
         if (swiper !== null) {
@@ -89,25 +90,25 @@ const PopularPosts = () => {
             <h2 className="widget-title">Popular Posts</h2>
             <div className="popular_carousel pt-15 multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                {/* <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper getSwiper={setSwiper} {...params}>
                     {mostViewSort(populerPOsts).map((item, i) => (
                         <div key={i} className="single_post type10 widgets_small mb15">
                             <div className="post_img">
                                 <div className="img_wrap">
-                                    <Link to="/">
+                                    <a onClick={() => router.push('/')}>
                                         <img src={item.image} alt="thubm"/>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <span className="tranding tranding_border">{item.id}</span>
                             </div>
                             <div className="single_post_text">
-                                <h4><Link to="/post1">{item.title}</Link></h4>
-                                <div className="meta4"><Link to="/">{item.category}</Link>
+                                <h4><a onClick={() => router.push('/post1')}>{item.title}</a></h4>
+                                <div className="meta4"><a onClick={() => router.push('/')}>{item.category}</a>
                                 </div>
                             </div>
                         </div>
                     ))}
-                </Swiper> */}
+                </Swiper>
                 <div className="navBtns">
                     <div onClick={goPrev} className="navBtn prevtBtn"><FontAwesome name="angle-left"/></div>
                     <div onClick={goNext} className="navBtn nextBtn"><FontAwesome name="angle-right"/></div>
