@@ -87,7 +87,7 @@ const businessNews = [
 
 const HomePage = () => {
     return (
-        <>
+        <div className="theme-1">
             <PostCarousel className="fifth_bg"/>
             <PostGallery className="fifth_bg"/>
             <FeatureNews/>
@@ -159,7 +159,7 @@ const HomePage = () => {
                 </div>
             </div>
             <div className="space-70"/>
-        </>
+        </div>
     );
 };
 
