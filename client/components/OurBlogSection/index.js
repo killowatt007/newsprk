@@ -1,10 +1,10 @@
 import React from 'react';
+import Link from 'next/link';
 
 // image
-import video4 from '../../doc/img/bg/video4.jpg';
-import video1 from '../../doc/img/bg/1.png';
-import video2 from '../../doc/img/bg/2.png';
-import {Link} from "react-router-dom";
+const video4 = '/img/bg/video4.jpg';
+const video1 = '/img/bg/1.png';
+const video2 = '/img/bg/2.png';
 
 const blog = [
     {
@@ -45,16 +45,16 @@ const OurBlogSection = ({dark}) => {
                         <div key={i} className="col-md-6 col-lg-4">
                             <div className="single_post post_type3 mb30">
                                 <div className="post_img">
-                                    <Link to="/">
+                                    <Link href="/">
                                         <img src={item.photo} alt="thumb"/>
                                     </Link>
                                 </div>
                                 <div className="single_post_text">
                                     <div className="meta3">
-                                        <Link to="/">{item.category}</Link>
-                                        <Link to="/">{item.date}</Link>
+                                        <Link href="/">{item.category}</Link>
+                                        <Link href="/">{item.date}</Link>
                                     </div>
-                                    <h4><Link to="/post1">{item.title}</Link></h4>
+                                    <h4><Link href="/post1">{item.title}</Link></h4>
                                     <div className="space-10"/>
                                     <p className="post-p">{item.description}</p>
                                 </div>

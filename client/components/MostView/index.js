@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 import { useRef } from 'react';
 
 // images
@@ -88,7 +88,6 @@ const mostView = [
 ];
 
 const MostView = ({no_margin, title, dark}) => {
-    const router = useRouter()
     const swip = useRef(null);
 
     const goNext = () => {
@@ -125,10 +124,10 @@ const MostView = ({no_margin, title, dark}) => {
 									</span>
                                 </div>
                                 <div className="single_post_text">
-                                    <div className="meta2"><a onClick={() => router.push('/')}>{item.category}</a>
-                                        <a onClick={() => router.push('/')}>{item.date}</a>
+                                    <div className="meta2"><Link href="/">{item.category}</Link>
+                                        <Link href="/">{item.date}</Link>
                                     </div>
-                                    <h4><a onClick={() => router.push('/post1')}>{item.title}</a></h4>
+                                    <h4><Link href="/post1">{item.title}</Link></h4>
                                 </div>
                                 <div className="type8_count">
                                     <h2>{item.id}</h2>

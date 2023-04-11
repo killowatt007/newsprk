@@ -1,9 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
+import FontAwesome from "../uiStyle/FontAwesome";
 
 // image
-import video4 from '../../doc/img/bg/video4.jpg';
-import {Link} from "react-router-dom";
-import FontAwesome from "../uiStyle/FontAwesome";
+const video4 = '../../doc/img/bg/video4.jpg';
 
 const blog = [
     {
@@ -50,13 +50,13 @@ const OurBlogSectionTwo = () => {
                                     <span className="tranding border_tranding"><FontAwesome name="bolt"/></span>
                                 </div>
                                 <div className="single_post_text padding20 white_bg">
-                                    <Link to="/">{item.title}</Link>
+                                    <Link href="/">{item.title}</Link>
                                     <div className="space-10"/>
                                     <p className="post-p">{item.description}</p>
                                     <div className="space-20"/>
                                     <div className="meta3">
-                                        <Link to="/">{item.category}</Link>
-                                        <Link to="/">{item.date}</Link>
+                                        <Link href="/">{item.category}</Link>
+                                        <Link href="/">{item.date}</Link>
                                     </div>
                                 </div>
                             </div>

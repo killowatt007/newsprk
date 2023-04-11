@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 import { useRef } from 'react';
 
 // images
@@ -61,7 +61,6 @@ const mostView = [
 ];
 
 const MostShareWidget = ({title, dark}) => {
-    const router = useRouter()
     const swip = useRef(null);
 
     const goNext = () => {
@@ -93,13 +92,13 @@ const MostShareWidget = ({title, dark}) => {
                                     <h2>{item.id}</h2>
                                 </div>
                                 <div className="single_post_text">
-                                    <div className="meta2"><a onClick={() => router.push('#')}>TECHNOLOGY</a>
-                                        <a onClick={() => router.push('#')}>March 26, 2020</a>
+                                    <div className="meta2"><Link href="#">TECHNOLOGY</Link>
+                                        <Link href="#">March 26, 2020</Link>
                                     </div>
-                                    <h4><a onClick={() => router.push('/post1')}>Nancy zhang a chinese busy woman and dhaka</a></h4>
+                                    <h4><Link href="/post1">Nancy zhang a chinese busy woman and dhaka</Link></h4>
                                     <ul className="inline socail_share">
-                                        <li><a onClick={() => router.push('#')}><FontAwesome name="twitter"/>2.2K</a></li>
-                                        <li><a onClick={() => router.push('#')}><FontAwesome name="facebook-f"/>2.2K</a></li>
+                                        <li><Link href="#"><FontAwesome name="twitter"/>2.2K</Link></li>
+                                        <li><Link href="#"><FontAwesome name="facebook-f"/>2.2K</Link></li>
                                     </ul>
                                     <div className="space-15"/>
                                     {dark ? <div className="border_white"/> : <div className="border_black"/>}

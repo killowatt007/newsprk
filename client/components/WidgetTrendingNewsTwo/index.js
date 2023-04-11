@@ -1,7 +1,8 @@
 import React from 'react';
-import trend22 from '../../doc/img/trending/trend22.jpg';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
+import Link from 'next/link';
+
+const trend22 = '/img/trending/trend22.jpg';
 
 const trendingPost = [
     {
@@ -27,18 +28,18 @@ const WidgetTrendingNewsTwo = () => {
             {trendingPost.map((item, i) => (
                 <div key={i} className={`single_post post_type3 post_type15 ${i+1 < trendingPost.length ? 'mb30' : ''}`}>
                     <div className="post_img border-radious5">
-                        <Link to="/">
+                        <Link href="/">
                             <img src={item.photo} alt="thumb"/>
                         </Link>
                         <span className="tranding border_tranding"><FontAwesome name="bolt"/></span>
                     </div>
                     <div className="single_post_text">
-                        <h4><Link to="/post1">{item.title}</Link></h4>
+                        <h4><Link href="/post1">{item.title}</Link></h4>
                         <div className="space-10"/>
                         <p className="post-p">{item.description}</p>
                         <div className="space-20"/>
-                        <div className="meta3"><Link to="/">TECHNOLOGY</Link>
-                            <Link to="/">March 26, 2020</Link>
+                        <div className="meta3"><Link href="/">TECHNOLOGY</Link>
+                            <Link href="/">March 26, 2020</Link>
                         </div>
                     </div>
                 </div>

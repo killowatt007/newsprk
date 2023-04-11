@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import Heading from "../uiStyle/Heading";
 import TrendingNewsSlider from "../TrendingNewsSlider";
 import FontAwesome from "../uiStyle/FontAwesome";
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const trendingNews = [
     {
@@ -44,8 +44,6 @@ const trendingNews = [
 ];
 
 const TrendingNews = ({dark}) => {
-    const router = useRouter()
-
     return (
         <Fragment>
             <Heading title="Trending News"/>
@@ -67,18 +65,10 @@ const TrendingNews = ({dark}) => {
                                 </div>
                                 <div className="single_post_text">
                                     <div className="meta2">
-                                        <a onClick={() => router.push('/')}>
-                                            {item.category}
-                                        </a>
-                                        <a onClick={() => router.push('/')}>
-                                            {item.date}
-                                        </a>
+                                        <Link href="/">{item.category}</Link>
+                                        <Link href="/">{item.date}</Link>
                                     </div>
-                                    <h4>
-                                        <a onClick={() => router.push('post1')}>
-                                            {item.title}
-                                        </a>
-                                    </h4>
+                                    <h4><Link href="/post1">{item.title}</Link></h4>
                                 </div>
                             </div>
                             <div className="space-15"/>
@@ -101,18 +91,10 @@ const TrendingNews = ({dark}) => {
                                 </div>
                                 <div className="single_post_text">
                                     <div className="meta2">
-                                        <a onClick={() => router.push('/')}>
-                                            {item.category}
-                                        </a>
-                                        <a onClick={() => router.push('/')}>
-                                            {item.date}
-                                        </a>
+                                        <Link href="/">{item.category}</Link>
+                                        <Link href="/">{item.date}</Link>
                                     </div>
-                                    <h4>
-                                        <a onClick={() => router.push('/post1')}>
-                                            {item.title}
-                                        </a>
-                                    </h4>
+                                    <h4><Link href="/post1">{item.title}</Link></h4>
                                 </div>
                             </div>
                             <div className="space-15"/>

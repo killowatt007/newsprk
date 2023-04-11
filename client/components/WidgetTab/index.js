@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import {TabContent, TabPane, Nav, Fade} from 'reactstrap';
 import classnames from 'classnames';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const data = [
     {
@@ -37,8 +37,6 @@ const data = [
 ];
 
 const WidgetTabPane = ({arr, a_id, id, dark}) => {
-    const router = useRouter()
-
     return (
         <Fade in={id === a_id}>
             <div className="widget tab_widgets">
@@ -47,22 +45,22 @@ const WidgetTabPane = ({arr, a_id, id, dark}) => {
                         <div className="single_post widgets_small">
                             <div className="post_img">
                                 <div className="img_wrap">
-                                    <a onClick={() => router.push('/')}>
+                                    <Link href="/">
                                         <img src={item.image} alt="thumb"/>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="single_post_text">
                                 <div className="meta2 meta_separator1">
-                                    <a onClick={() => router.push('/')}>
+                                    <Link href="/">
                                         {item.category}
-                                    </a>
-                                    <a onClick={() => router.push('/')}>
+                                    </Link>
+                                    <Link href="/">
                                         {item.date}
-                                    </a>
+                                    </Link>
                                 </div>
                                 <h4>
-                                    <a onClick={() => router.push('/')}>
+                                    <a href="/">
                                         {item.title}
                                     </a>
                                 </h4>

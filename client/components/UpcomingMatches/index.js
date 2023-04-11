@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {CircleSlider} from "react-circle-slider";
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 // images
 const match1 = '/img/flag/match1.png';
@@ -48,8 +48,6 @@ const matches = [
 ];
 
 const UpcomingMatches = ({dark}) => {
-    const router = useRouter()
-
     return (
         <div className="widget upcomming_macth mb30">
             <div className="row">
@@ -57,26 +55,26 @@ const UpcomingMatches = ({dark}) => {
                     <h2 className="widget-title">Upcoming Matches</h2>
                 </div>
                 <div className="col-4 text-right align-self-center">
-                    <a onClick={() => router.push('#')} className="see_all mb20">See All</a>
+                    <Link href="#" className="see_all mb20">See All</Link>
                 </div>
             </div>
             {matches.map((item, i) => (
                 <Fragment key={i}>
                     <div className="single_post post_type13 widgets_small">
                         <div className="post_img">
-                            <a onClick={() => router.push('/')}>
+                            <Link href="/">
                                 <img src={item.image} alt="icon"/>
-                            </a>
+                            </Link>
                         </div>
                         <div className="single_post_text">
-                            <h4><a onClick={() => router.push('/')} className="playing_teams">
+                            <h4><Link href="/" className="playing_teams">
                                 {item.countries.map((country, i) => (
                                     <Fragment key={i}>
                                         {country}{' '}
                                         {(i + 1) < item.countries.length ? <span>VS &nbsp;</span> : null}
                                     </Fragment>
                                 ))}
-                            </a></h4>
+                            </Link></h4>
                             <p className="meta macth_meta">
                                 {item.date} &nbsp;|&nbsp;<span> {item.time} </span> &nbsp;
                             </p>
@@ -92,7 +90,7 @@ const UpcomingMatches = ({dark}) => {
                                 progressWidth={5}
                                 circleWidth={5}
                             />
-                            <div className="first_circle circle"/>
+                            {/*<div className="first_circle circle"/>*/}
                         </div>
                     </div>
                     <div className="space-10"/>

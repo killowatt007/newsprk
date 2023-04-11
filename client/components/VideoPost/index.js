@@ -2,14 +2,13 @@ import React, {useState} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import ModalVideo from 'react-modal-video'
 import PopularPosts from "../PopularPosts";
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const video1 = "/img/video/video1.jpg";
 
 const VideoPost = ({className, dark}) => {
     const [vModal, setvModal] = useState(false);
     const [videoId] = useState('0r6C3z3TEKw');
-    const router = useRouter()
 
     return (
         <div className={`video_posts ${className ? className : ''}`}>
@@ -28,19 +27,19 @@ const VideoPost = ({className, dark}) => {
                             <div className="single_post post_type3 post_type11 margintop-60- xs-mb30">
                                 <div className="post_img">
                                     <div className="img_wrap">
-                                        <a onClick={() => router.push('/')} className="play_btn">
+                                        <Link href="/" className="play_btn">
                                             <img src={video1} alt="video1"/>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <p onClick={() => setvModal(true)} className="youtube_middle"><FontAwesome
                                         name="youtube-play"/></p>
                                 </div>
                                 <div className={`single_post_text padding30 ${dark ? 'dark-2' : 'fourth_bg'}`}>
-                                    <div className="meta3"><a onClick={() => router.push('/')}>TECHNOLOGY</a>
-                                        <a onClick={() => router.push('/')}>March 26, 2020</a>
+                                    <div className="meta3"><Link href="/">TECHNOLOGY</Link>
+                                        <Link href="/">March 26, 2020</Link>
                                     </div>
-                                    <h4><a onClick={() => router.push('/post1')}>Riots Report Shows London Needs To Maintain Police Numbers,
-                                        Says Mayor</a></h4>
+                                    <h4><Link href="/post1">Riots Report Shows London Needs To Maintain Police Numbers,
+                                        Says Mayor</Link></h4>
                                 </div>
                             </div>
                         </div>

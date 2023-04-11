@@ -1,5 +1,5 @@
 import React from 'react';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const quick_links = [
     {
@@ -21,8 +21,6 @@ const quick_links = [
 ];
 
 const FooterCopyright = () => {
-    const router = useRouter()
-
     return (
         <div className="copyright">
             <div className="container">
@@ -36,7 +34,7 @@ const FooterCopyright = () => {
                             <div className="copyright_menu inline">
                                 <ul>
                                     {quick_links.map((item, i) => (
-                                        <li key={i}><a onClick={() => router.push(item.link)}>{item.name}</a></li>
+                                        <li key={i}><Link href={item.link}>{item.name}</Link></li>
                                     ))}
                                 </ul>
                             </div>

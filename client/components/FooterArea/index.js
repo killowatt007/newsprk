@@ -1,17 +1,14 @@
 import React, {useState} from 'react';
-// import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FooterCopyright from "../FooterCopyright";
 import FooterMoreNews from "../FooterMoreNews";
 import TwitterFeed from "../TwitterFeed";
 import FontAwesome from "../uiStyle/FontAwesome";
-import {useRouter} from "next/router";
-
 import FooterNewsCategories from "../FooterNewsCategories";
 
 const flogo = '/img/logo/footer_logo.png';
 
 const FooterArea = ({className}) => {
-    const router = useRouter()
     const [email, setEmail] = useState('');
     const submitHandler = e => {
         e.preventDefault();
@@ -24,16 +21,16 @@ const FooterArea = ({className}) => {
                     <div className="row">
                         <div className="col-md-6 align-self-center">
                             <div className="footer_logo logo">
-                                <a onClick={() => router.push('/')}>
+                                <Link href="/">
                                     <img src={flogo} alt="logo"/>
-                                </a>
+                                </Link>
                             </div>
                             <div className="social2">
                                 <ul className="inline">
-                                    <li><a onClick={() => router.push('#')}><FontAwesome name="twitter"/></a></li>
-                                    <li><a onClick={() => router.push('#')}><FontAwesome name="facebook-f"/></a></li>
-                                    <li><a onClick={() => router.push('#')}><FontAwesome name="youtube-play"/></a></li>
-                                    <li><a onClick={() => router.push('#')}><FontAwesome name="instagram"/></a></li>
+                                    <li><Link href="#"><FontAwesome name="twitter"/></Link></li>
+                                    <li><Link href="#"><FontAwesome name="facebook-f"/></Link></li>
+                                    <li><Link href="#"><FontAwesome name="youtube-play"/></Link></li>
+                                    <li><Link href="#"><FontAwesome name="instagram"/></Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -65,37 +62,37 @@ const FooterArea = ({className}) => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <ul>
-                                                <li><a onClick={() => router.push('/')}>Crossword</a>
+                                                <li><Link href="/">Crossword</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Food</a>
+                                                <li><Link href="/">Food</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Automobiles</a>
+                                                <li><Link href="/">Automobiles</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Education</a>
+                                                <li><Link href="/">Education</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Health</a>
+                                                <li><Link href="/">Health</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Magazine</a>
+                                                <li><Link href="/">Magazine</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Weddings</a>
+                                                <li><Link href="/">Weddings</Link>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div className="col-lg-6">
                                             <ul>
-                                                <li><a onClick={() => router.push('/')}>Classifieds</a>
+                                                <li><Link href="/">Classifieds</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Photographies</a>
+                                                <li><Link href="/">Photographies</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>NYT Store</a>
+                                                <li><Link href="/">NYT Store</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Journalisms</a>
+                                                <li><Link href="/">Journalisms</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Public Editor</a>
+                                                <li><Link href="/">Public Editor</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Tools & Services</a>
+                                                <li><Link href="/">Tools & Services</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>My Account</a>
+                                                <li><Link href="/">My Account</Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -113,21 +110,21 @@ const FooterArea = ({className}) => {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <ul>
-                                                <li><a onClick={() => router.push('/')}>Today’s Opinion</a>
+                                                <li><Link href="/">Today’s Opinion</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Op-Ed Contributing</a>
+                                                <li><Link href="/">Op-Ed Contributing</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Contributing Writers</a>
+                                                <li><Link href="/">Contributing Writers</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Business News</a>
+                                                <li><Link href="/">Business News</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Collections</a>
+                                                <li><Link href="/">Collections</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Today’s Paper</a>
+                                                <li><Link href="/">Today’s Paper</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Saturday Review</a>
+                                                <li><Link href="/">Saturday Review</Link>
                                                 </li>
-                                                <li><a onClick={() => router.push('/')}>Product Review</a>
+                                                <li><Link href="/">Product Review</Link>
                                                 </li>
                                             </ul>
                                         </div>

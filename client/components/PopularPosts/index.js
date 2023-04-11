@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
 import {mostViewSort} from "../../utils/commonFunctions";
-import {useRouter} from "next/router";
+import Link from 'next/link';
 import { useRef } from 'react';
 
 // images
@@ -66,7 +66,6 @@ const populerPOsts = [
 ];
 
 const PopularPosts = () => {
-    const router = useRouter()
     const swip = useRef(null);
 
     const goNext = () => {
@@ -96,15 +95,15 @@ const PopularPosts = () => {
                         <div key={i} className="single_post type10 widgets_small mb15">
                             <div className="post_img">
                                 <div className="img_wrap">
-                                    <a onClick={() => router.push('/')}>
+                                    <Link href="/">
                                         <img src={item.image} alt="thubm"/>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <span className="tranding tranding_border">{item.id}</span>
                             </div>
                             <div className="single_post_text">
-                                <h4><a onClick={() => router.push('/post1')}>{item.title}</a></h4>
-                                <div className="meta4"><a onClick={() => router.push('/')}>{item.category}</a>
+                                <h4><Link href="/post1">{item.title}</Link></h4>
+                                <div className="meta4"><Link href="/">{item.category}</Link>
                                 </div>
                             </div>
                         </div>

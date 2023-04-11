@@ -17,10 +17,6 @@ import CategoriesWidget from "../components/CategoriesWidget";
 import {useRouter} from "next/router";
 import Default from '../layouts/Default';
 
-// import {useRouter} from "next/router";
-// const router = useRouter()
-// onClick={() => router.push('/')}
-
 const banner1 = '/img/bg/banner1.png'
 const banner2 = '/img/bg/sidebar-1.png'
 

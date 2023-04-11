@@ -1,14 +1,15 @@
 import React, {Fragment} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-// import {Link} from "react-router-dom";
+import Link from 'next/link';
+
 // images
-import business21 from '../../doc/img/business/business21.jpg';
-import arrow3 from '../../doc/img/icon/arrow3.png';
-import business22 from '../../doc/img/business/business22.jpg';
-import business23 from '../../doc/img/business/business23.jpg';
-import business24 from '../../doc/img/business/business24.jpg';
-import business25 from '../../doc/img/business/business25.jpg';
-import business26 from '../../doc/img/business/business26.jpg';
+const business21 = '/img/business/business21.jpg';
+const arrow3 = '/img/icon/arrow3.png';
+const business22 = '/img/business/business22.jpg';
+const business23 = '/img/business/business23.jpg';
+const business24 = '/img/business/business24.jpg';
+const business25 = '/img/business/business25.jpg';
+const business26 = '/img/business/business26.jpg';
 
 const business = [
     {
@@ -73,14 +74,14 @@ const BusinessAllNewsTwo = () => {
                 <div key={i} className="single_post post_type12 type20">
                     <div className="post_img border-radious5">
                         <div className="img_wrap">
-                            {/* <Link to="/business">
+                            <Link href="/business">
                                 <img src={item.photo} alt="thumb"/>
-                            </Link> */}
+                            </Link>
                         </div>
                         <span className="tranding border_tranding"><FontAwesome name="bolt"/></span>
                     </div>
                     <div className="single_post_text">
-                        {/* <h4><Link to="/post1">{item.title}</Link></h4> */}
+                        <h4><Link href="/post1">{item.title}</Link></h4>
                         <div className="row">
                             <div className="col-6 align-self-center">
                                 <div className="meta_col">
@@ -89,14 +90,14 @@ const BusinessAllNewsTwo = () => {
                             </div>
                             <div className="col-6 text-right align-self-center">
                                 <ul className="meta_share inline">
-                                    {/* <li><Link to="/"><FontAwesome name="bookmark"/></Link></li>
-                                    <li><Link to="/"><FontAwesome name="share"/></Link></li> */}
+                                    <li><Link href="/"><FontAwesome name="bookmark"/></Link></li>
+                                    <li><Link href="/"><FontAwesome name="share"/></Link></li>
                                 </ul>
                             </div>
                         </div>
                         <p className="post-p">{item.description}</p>
                         <div className="space-10"/>
-                        {/* <Link to="/business" className="readmore3">Read more <img src={arrow3} alt="arrow3"/></Link> */}
+                        <Link href="/business" className="readmore3">Read more <img src={arrow3} alt="arrow3"/></Link>
                         {i + 1 < business.length ? <Fragment>
                             <div className="space-10"/>
                             <div className="border_black"/>

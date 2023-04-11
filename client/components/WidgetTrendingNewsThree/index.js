@@ -1,8 +1,9 @@
 import React from 'react';
-import video32 from "../../doc/img/blog/video32.jpg";
-import blog_small1 from "../../doc/img/blog/blog_small1.jpg";
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
+import Link from 'next/link';
+
+const video32 = "/img/blog/video32.jpg";
+const blog_small1 = "/img/blog/blog_small1.jpg";
 
 const trends = [
     {
@@ -33,27 +34,27 @@ const WidgetTrendingNewsThree = () => {
                     </div>
                     <span className="tranding border_tranding"><FontAwesome name="bolt"/></span>
                 </div>
-                <div className="single_post_text"><Link to="/post1">Japan’s virus puzzled the world luck running
+                <div className="single_post_text"><Link href="/post1">Japan’s virus puzzled the world luck running
                     out?</Link>
                     <div className="space-10"/>
                     <p className="post-p">The property, complete with 30-seat screening from room, a 100-seat
                         amphitheater and a swimming pond with sandy shower…</p>
                     <div className="space-20"/>
-                    <div className="meta3"><Link to="/">TECHNOLOGY</Link>
-                        <Link to="/">March 26, 2020</Link>
+                    <div className="meta3"><Link href="/">TECHNOLOGY</Link>
+                        <Link href="/">March 26, 2020</Link>
                     </div>
                 </div>
             </div>
             {trends.map((item, i) => (
                 <div key={i} className="single_post type10 type16 widgets_small mb15">
                     <div className="post_img">
-                        <Link to="">
+                        <Link href="">
                             <img src={item.photo} alt="thumb"/>
                         </Link>
                     </div>
                     <div className="single_post_text">
-                        <h4><Link to="/post1">{item.title}</Link></h4>
-                        <div className="meta4"><Link to="/">TECHNOLOGY</Link></div>
+                        <h4><Link href="/post1">{item.title}</Link></h4>
+                        <div className="meta4"><Link href="/">TECHNOLOGY</Link></div>
                         <div className="space-5"/>
                         <div className="border_black"/>
                         <div className="space-15"/>

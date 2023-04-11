@@ -1,9 +1,9 @@
 import React from 'react';
 import Heading from "../uiStyle/Heading";
 import Swiper from 'react-id-swiper';
-import {useRouter} from "next/router";
 import FontAwesome from "../uiStyle/FontAwesome";
 import { useRef } from 'react';
+import Link from 'next/link';
 
 const news = [
     {
@@ -45,7 +45,6 @@ const news = [
 ];
 
 const FeatureNews = ({className}) => {
-    const router = useRouter()
     const swip = useRef(null);
 
     const goNext = () => {
@@ -98,23 +97,14 @@ const FeatureNews = ({className}) => {
                                 {news.map((item, i) => (
                                     <div key={i} className="single_post post_type6 post_type7">
                                         <div className="post_img gradient1">
-                                            <a onClick={() => router.push('/')}>
-                                                <img src={item.image} alt="thumb"/>
-                                            </a>
+                                            <Link href="/"><img src={item.image} alt="thumb"/></Link>
                                         </div>
                                         <div className="single_post_text">
-                                            <div className="meta5">
-                                                <a onClick={() => router.push('/')}>
-                                                    {item.category}
-                                                </a>
-                                                <a onClick={() => router.push('/')}>
-                                                    {item.date}
-                                                </a>
+                                            <div className="meta5"><Link href="/">{item.category}</Link>
+                                                <Link href="/">{item.date}</Link>
                                             </div>
                                             <h4>
-                                                <a onClick={() => router.push('/')}>
-                                                    {item.title}
-                                                </a>
+                                                <Link href="/post1">{item.title}</Link>
                                             </h4>
                                         </div>
                                     </div>

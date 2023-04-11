@@ -509,15 +509,15 @@ const MainMenu = ({className, dark}) => {
                                     </div>
                                     <div className="lang d-none d-xl-block">
                                         <ul>
-                                            <li><a onClick={() => router.push('/')}>English <FontAwesome name="angle-down"/></a>
+                                            <li><Link href="/">English <FontAwesome name="angle-down"/></Link>
                                                 <ul>
-                                                    <li><a onClick={() => router.push('/')}>Spanish</a>
+                                                    <li><Link href="/">Spanish</Link>
                                                     </li>
-                                                    <li><a onClick={() => router.push('/')}>China</a>
+                                                    <li><Link href="/">China</Link>
                                                     </li>
-                                                    <li><a onClick={() => router.push('/')}>Hindi</a>
+                                                    <li><Link href="/">Hindi</Link>
                                                     </li>
-                                                    <li><a onClick={() => router.push('/')}>Corian</a>
+                                                    <li><Link href="/">Corian</Link>
                                                     </li>
                                                 </ul>
                                             </li>

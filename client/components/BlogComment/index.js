@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import author2 from '../../doc/img/author/author2.png';
-// import {Link} from "react-router-dom";
+import Link from 'next/link';
 import SimpleReactValidator from "simple-react-validator";
 import {toast} from "react-toastify";
+
+const author2 = '/img/author/author2.png';
 
 class BlogComment extends Component {
     constructor(props) {
@@ -85,8 +86,8 @@ class BlogComment extends Component {
                                         <img src={author2} alt="author2"/>
                                     </div>
                                     <div className="row">
-                                        {/* <div className="col-sm-6"><Link to="/">QuomodoSoft</Link>
-                                        </div> */}
+                                        <div className="col-sm-6"><Link href="/">QuomodoSoft</Link>
+                                        </div>
                                         <div className="col-sm-6">
                                             <div className="replay text-right"><p>replay</p>
                                             </div>
@@ -104,8 +105,8 @@ class BlogComment extends Component {
                                         <img src={author2} alt="author2"/>
                                     </div>
                                     <div className="row">
-                                        {/* <div className="col-sm-6"><Link to="/">QuomodoSoft</Link>
-                                        </div> */}
+                                        <div className="col-sm-6"><Link href="/">QuomodoSoft</Link>
+                                        </div>
                                         <div className="col-sm-6">
                                             <div className="replay text-right"><p>replay</p>
                                             </div>
@@ -123,8 +124,8 @@ class BlogComment extends Component {
                                         <img src={author2} alt="author2"/>
                                     </div>
                                     <div className="row">
-                                        {/* <div className="col-sm-6"><Link to="/">QuomodoSoft</Link>
-                                        </div> */}
+                                        <div className="col-sm-6"><Link href="/">QuomodoSoft</Link>
+                                        </div>
                                         <div className="col-sm-6">
                                             <div className="replay text-right"><p>replay</p>
                                             </div>
@@ -142,8 +143,8 @@ class BlogComment extends Component {
                                         <img src={author2} alt="author2"/>
                                     </div>
                                     <div className="row">
-                                        {/* <div className="col-sm-6"><Link to="/">QuomodoSoft</Link>
-                                        </div> */}
+                                        <div className="col-sm-6"><Link href="/">QuomodoSoft</Link>
+                                        </div>
                                         <div className="col-sm-6">
                                             <div className="replay text-right"><p>replay</p>
                                             </div>
@@ -154,7 +155,7 @@ class BlogComment extends Component {
                                         rutrum ante in nulla suscipit, vel posuere leo tristique.</p>
                                 </div>
                                 <div className="space-40"/>
-                                {/* <Link to="/" className={this.props.theme === 3 ? 'cbtn4' : 'cbtn2'}>Load More</Link> */}
+                                <Link href="/" className={this.props.theme === 3 ? 'cbtn4' : 'cbtn2'}>Load More</Link>
                             </div>
                         </div>
                     </div>

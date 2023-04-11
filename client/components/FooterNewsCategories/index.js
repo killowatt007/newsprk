@@ -1,33 +1,31 @@
 import React, {Fragment} from 'react';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const FooterNewsCategories = () => {
-    const router = useRouter()
-
     return (
         <Fragment>
             <h3 className="widget-title">News categories</h3>
             <div className="row">
                 <div className="col-lg-6">
                     <ul>
-                        <li><a onClick={() => router.push('/')}>Politics</a></li>
-                        <li><a onClick={() => router.push('/')}>Business</a></li>
-                        <li><a onClick={() => router.push('/')}>TECHNOLOGY</a></li>
-                        <li><a onClick={() => router.push('/')}>Science</a></li>
-                        <li><a onClick={() => router.push('/')}>Health</a></li>
-                        <li><a onClick={() => router.push('/')}>Sports</a></li>
-                        <li><a onClick={() => router.push('/')}>Entertainment</a></li>
+                        <li><Link href="/">Politics</Link></li>
+                        <li><Link href="/">Business</Link></li>
+                        <li><Link href="/">TECHNOLOGY</Link></li>
+                        <li><Link href="/">Science</Link></li>
+                        <li><Link href="/">Health</Link></li>
+                        <li><Link href="/">Sports</Link></li>
+                        <li><Link href="/">Entertainment</Link></li>
                     </ul>
                 </div>
                 <div className="col-lg-6">
                     <ul>
-                        <li><a onClick={() => router.push('/')}>Education</a></li>
-                        <li><a onClick={() => router.push('/')}>Obituaries</a></li>
-                        <li><a onClick={() => router.push('/')}>Corrections</a></li>
-                        <li><a onClick={() => router.push('/')}>Education</a></li>
-                        <li><a onClick={() => router.push('/')}>Today’s Paper</a></li>
-                        <li><a onClick={() => router.push('/')}>Corrections</a></li>
-                        <li><a onClick={() => router.push('/')}>Foods</a></li>
+                        <li><Link href="/">Education</Link></li>
+                        <li><Link href="/">Obituaries</Link></li>
+                        <li><Link href="/">Corrections</Link></li>
+                        <li><Link href="/">Education</Link></li>
+                        <li><Link href="/">Today’s Paper</Link></li>
+                        <li><Link href="/">Corrections</Link></li>
+                        <li><Link href="/">Foods</Link></li>
                     </ul>
                 </div>
             </div>

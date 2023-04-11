@@ -1,5 +1,5 @@
 import React from 'react';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const union = '/img/icon/union.png';
 const category1 = '/img/categories/category1.jpg';
@@ -43,8 +43,6 @@ const categories = [
 ];
 
 const CategoriesWidget = () => {
-    const router = useRouter()
-
     return (
         <div className="widget category mb30">
             <div className="row">
@@ -52,15 +50,15 @@ const CategoriesWidget = () => {
                     <h2 className="widget-title">Categories</h2>
                 </div>
                 <div className="col-6 text-right align-self-center">
-                    <a onClick={() => router.push('/')} className="see_all mb20">See All</a>
+                    <Link href="/" className="see_all mb20">See All</Link>
                 </div>
             </div>
             <ul>
                 {categories.map((item, i) => (
                     <li key={i}>
-                        <a onClick={() => router.push('/')} style={{background: `url(${item.big_image})`}}> <span>{item.title}</span>
+                        <Link href="/" style={{background: `url(${item.big_image})`}}> <span>{item.title}</span>
                             <img src={item.small_img} alt="category"/>
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>

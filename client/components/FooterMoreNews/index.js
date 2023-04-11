@@ -1,6 +1,5 @@
 import React from 'react';
-// import {Link} from "react-router-dom";
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const mobile = '/img/icon/mobile.png';
 const speaker = '/img/icon/speacker.png';
@@ -35,15 +34,13 @@ const news = [
 ];
 
 const FooterMoreNews = () => {
-    const router = useRouter()
-
     return (
         <div className="extra_newss border_white_left pl-4">
             <h3 className="widget-title2">More news</h3>
             {news.map((item, i) => (
                 <div key={i} className="single_extra_news border_white_bottom">
                     <p>{item.category} <span> / {item.date}</span></p>
-                    <a onClick={() => router.push('/')}>{item.title}</a>
+                    <Link href="/">{item.title}</Link>
                     <span className="news_counter">{i + 1}</span>
                 </div>
             ))}
@@ -56,19 +53,19 @@ const FooterMoreNews = () => {
                     <div className="fcicon">
                         <img src={mobile} alt="mobile"/>
                     </div>
-                    <a onClick={() => router.push('/')}>On your mobile</a>
+                    <Link href="/">On your mobile</Link>
                 </div>
                 <div className="single_fcontact">
                     <div className="fcicon">
                         <img src={speaker} alt="speaker"/>
                     </div>
-                    <a onClick={() => router.push('/')}>On smart speakers</a>
+                    <Link href="/">On smart speakers</Link>
                 </div>
                 <div className="single_fcontact">
                     <div className="fcicon">
                         <img src={envelope} alt="evelope"/>
                     </div>
-                    <a onClick={() => router.push('/')}>Contact Newspark news</a>
+                    <Link href="/">Contact Newspark news</Link>
                 </div>
             </div>
         </div>

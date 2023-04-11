@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 import { useRef } from 'react';
 
 // images
@@ -82,7 +82,6 @@ const mostView = [
 ];
 
 const SportsCarousel = ({dark}) => {
-    const router = useRouter()
     const swip = useRef(null);
 
     const goNext = () => {
@@ -111,15 +110,15 @@ const SportsCarousel = ({dark}) => {
                             <div className="single_post widgets_small">
                                 <div className="post_img">
                                     <div className="img_wrap">
-                                        <a onClick={() => router.push('/')}><img src={item.image} alt="thumb"/></a>
+                                        <Link href="/"><img src={item.image} alt="thumb"/></Link>
                                     </div>
                                     <span className="tranding"><FontAwesome name="bolt"/></span>
                                 </div>
                                 <div className="single_post_text">
-                                    <div className="meta2"><a onClick={() => router.push('/')}>{item.category}</a>
-                                        <a onClick={() => router.push('/')}>{item.date}</a>
+                                    <div className="meta2"><Link href="/">{item.category}</Link>
+                                        <Link href="/">{item.date}</Link>
                                     </div>
-                                    <h4><a onClick={() => router.push('/post1')}>{item.title}</a></h4>
+                                    <h4><Link href="/post1">{item.title}</Link></h4>
                                 </div>
                             </div>
                             <div className="space-15"/>

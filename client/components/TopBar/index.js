@@ -1,11 +1,10 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {useRouter} from "next/router";
+import Link from 'next/link';
 import { useRef } from 'react';
 
 const TopBar = ({className, dark}) => {
-    const router = useRouter()
     const swip = useRef(null);
 
     const goNext = () => {
@@ -35,27 +34,26 @@ const TopBar = ({className, dark}) => {
                             <div className="nav_style1">
                                 <Swiper ref={swip} className="trancarousel" {...params}>
                                     <div className="trancarousel_item">
-                                        <p><a onClick={() => router.push('/')}>Top 10 Best Movies of 2018 So Far: Great Movies To Watch
-                                            Now</a>
+                                        <p><Link href="/">Top 10 Best Movies of 2018 So Far: Great Movies To Watch
+                                            Now</Link>
                                         </p>
                                     </div>
                                     <div className="trancarousel_item">
-                                        <p><a onClick={() => router.push('/')}>Top 10 Best Movies of 2018 So Far: Great Movies To Watch
-                                            Now</a>
+                                        <p><Link href="/">Top 10 Best Movies of 2018 So Far: Great Movies To Watch
+                                            Now</Link>
                                         </p>
                                     </div>
                                     <div className="trancarousel_item">
-                                        <p><a onClick={() => router.push('/')}>Top 10 Best Movies of 2018 So Far: Great Movies To Watch
-                                            Now</a>
+                                        <p><Link href="/">Top 10 Best Movies of 2018 So Far: Great Movies To Watch
+                                            Now</Link>
                                         </p>
                                     </div>
                                 </Swiper>
                                 <div className="navBtns">
-                                    <button className="navBtn prevBtn" onClick={goPrev}>
-                                        <FontAwesome name="angle-left"/>
+                                    <button className="navBtn prevBtn" onClick={goPrev}><FontAwesome name="angle-left"/>
                                     </button>
-                                    <button className="navBtn nextBtn" onClick={goNext}>
-                                        <FontAwesome name="angle-right"/>
+                                    <button className="navBtn nextBtn" onClick={goNext}><FontAwesome
+                                        name="angle-right"/>
                                     </button>
                                 </div>
                             </div>
@@ -68,10 +66,10 @@ const TopBar = ({className, dark}) => {
                             </div>
                             <div className={`social1 ${dark ? 'white' : ''}`}>
                                 <ul className="inline">
-                                    <li><a onClick={() => router.push('/')}><FontAwesome name="twitter"/></a></li>
-                                    <li><a onClick={() => router.push('/')}><FontAwesome name="facebook-f"/></a></li>
-                                    <li><a onClick={() => router.push('/')}><FontAwesome name="youtube-play"/></a></li>
-                                    <li><a onClick={() => router.push('/')}><FontAwesome name="instagram"/></a></li>
+                                    <li><Link href="#"><FontAwesome name="twitter"/></Link></li>
+                                    <li><Link href="#"><FontAwesome name="facebook-f"/></Link></li>
+                                    <li><Link href="#"><FontAwesome name="youtube-play"/></Link></li>
+                                    <li><Link href="#"><FontAwesome name="instagram"/></Link></li>
                                 </ul>
                             </div>
                         </div>

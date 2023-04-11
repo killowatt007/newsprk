@@ -1,9 +1,7 @@
 import React, {Fragment} from 'react';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const EntertainmentNews = ({entertainments}) => {
-    const router = useRouter()
-
     return (
         <Fragment>
             {entertainments.map((item, i) => (
@@ -11,16 +9,16 @@ const EntertainmentNews = ({entertainments}) => {
                     <div className="single_post post_type3 mb30">
                         <div className="post_img">
                             <div className="img_wrap">
-                                <a onClick={() => router.push('/')}>
+                                <Link href="/">
                                     <img src={item.image} alt="thumb"/>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="single_post_text">
-                            <div className="meta3"><a onClick={() => router.push('/')}>TECHNOLOGY</a>
-                                <a onClick={() => router.push('/')}>{item.date}</a>
+                            <div className="meta3"><Link href="/">TECHNOLOGY</Link>
+                                <Link href="/">{item.date}</Link>
                             </div>
-                            <h4><a onClick={() => router.push('/post1')}>{item.title}</a></h4>
+                            <h4><Link href="/post1">{item.title}</Link></h4>
                             <div className="space-10"/>
                             <p className="post-p">{item.body}</p>
                         </div>

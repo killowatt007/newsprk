@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
-import {useRouter} from "next/router";
+import Link from 'next/link';
 import { useRef } from 'react';
 
 const trendbig1 = "/img/trending/trendbig1.jpg";
@@ -31,7 +31,6 @@ const trendingNews = [
     },
 ];
 const TrendingNewsSlider = () => {
-    const router = useRouter()
     const swip = useRef(null);
 
     const goNext = () => {
@@ -80,10 +79,10 @@ const TrendingNewsSlider = () => {
                             <span className="tranding"><FontAwesome name="fa-bolt"/></span>
                         </div>
                         <div className="single_post_text">
-                            <div className="meta3"><a onClick={() => router.push('/')}>{item.category}</a>
-                                <a onClick={() => router.push('/')}>{item.date}</a>
+                            <div className="meta3"><Link href="/">{item.category}</Link>
+                                <Link href="/">{item.date}</Link>
                             </div>
-                            <h4><a onClick={() => router.push('/post1')}>{item.title}</a></h4>
+                            <h4><Link href="/post1">{item.title}</Link></h4>
                             <div className="space-10"/>
                             <p className="post-p">{item.body}</p>
                         </div>

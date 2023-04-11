@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 
 // images
-import trendbig1 from '../../doc/img/trending/trendbig1.jpg';
-import transm4 from '../../doc/img/trending/transm4.jpg';
-import transm5 from '../../doc/img/trending/transm5.jpg';
-import transm6 from '../../doc/img/trending/transm6.jpg';
+const trendbig1 = '/img/trending/trendbig1.jpg';
+const transm4 = '/img/trending/transm4.jpg';
+const transm5 = '/img/trending/transm5.jpg';
+const transm6 = '/img/trending/transm6.jpg';
 
 const posts = [
     {
@@ -41,10 +41,10 @@ const WidgetTrendingNews = ({dark}) => {
                     <span className="tranding"><FontAwesome name="bolt"/></span>
                 </div>
                 <div className="single_post_text">
-                    <div className="meta3"><Link to="/">TECHNOLOGY</Link>
-                        <Link to="/">March 26, 2020</Link>
+                    <div className="meta3"><Link href="/">TECHNOLOGY</Link>
+                        <Link href="/">March 26, 2020</Link>
                     </div>
-                    <h4><Link to="/post1">There may be no consoles in the future ea exec says</Link></h4>
+                    <h4><Link href="/post1">There may be no consoles in the future ea exec says</Link></h4>
                     <div className="space-10"/>
                     <p className="post-p">The property, complete with 30-seat screening from room, a 100-seat
                         amphitheater and a swimming pond with sandy shower…</p>
@@ -64,10 +64,10 @@ const WidgetTrendingNews = ({dark}) => {
                             <span className="tranding"><FontAwesome name="bolt"/></span>
                         </div>
                         <div className="single_post_text">
-                            <div className="meta2"><Link to="/">{item.category}</Link>
-                                <Link to="/">{item.date}</Link>
+                            <div className="meta2"><Link href="/">{item.category}</Link>
+                                <Link href="/">{item.date}</Link>
                             </div>
-                            <h4><Link to="/post1">{item.title}</Link></h4>
+                            <h4><Link href="/post1">{item.title}</Link></h4>
                         </div>
                     </div>
                 </Fragment>

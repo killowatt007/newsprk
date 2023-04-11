@@ -1,7 +1,7 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {useRouter} from "next/router";
+import Link from 'next/link';
 import { useRef } from 'react';
 
 const postSlider = [
@@ -38,7 +38,6 @@ const postSlider = [
 ];
 
 const PostCarousel = ({className}) => {
-    const router = useRouter()
     const swip = useRef(null);
 
     const goNext = () => {
@@ -88,17 +87,13 @@ const PostCarousel = ({className}) => {
                                         <div key={i} className="single_post widgets_small post_type5">
                                             <div className="post_img">
                                                 <div className="img_wrap">
-                                                    <a onClick={() => router.push('/')}>
+                                                    <Link href="/">
                                                         <img src={item.image} alt="slider5"/>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                             <div className="single_post_text">
-                                                <h4>
-                                                    <a onClick={() => router.push('/post1')}>
-                                                        {item.title}
-                                                    </a>
-                                                </h4>
+                                                <h4><Link href="/post1">{item.title}</Link></h4>
                                                 <p>{item.body}</p>
                                             </div>
                                         </div>

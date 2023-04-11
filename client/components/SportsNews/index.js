@@ -1,13 +1,11 @@
 import React from 'react';
 import SportsCarousel from "../SportsCarousel";
 import FontAwesome from "../uiStyle/FontAwesome";
-import {useRouter} from "next/router";
+import Link from 'next/link';
 
 const sportsbig1 = "/img/sports/sportsbig1.jpg";
 
 const SportsNews = ({dark}) => {
-    const router = useRouter()
-
     return (
         <div className="row">
             <div className="col-12">
@@ -23,25 +21,24 @@ const SportsNews = ({dark}) => {
                         <div className="col-md-6">
                             <div className="single_post post_type3 mb30">
                                 <div className="post_img">
-                                    <a onClick={() => router.push('/')}>
+                                    <Link href="/">
                                         <img src={sportsbig1} alt="sportsbig1"/>
-                                    </a> 
-                                    <span className="tranding">
+                                    </Link> <span className="tranding">
 													<FontAwesome name="bolt"/>
 												</span>
                                 </div>
                                 <div className="single_post_text">
-                                    <div className="meta3"><a onClick={() => router.push('/')}>TECHNOLOGY</a>
-                                        <a onClick={() => router.push('/')}>March 26, 2020</a>
+                                    <div className="meta3"><Link href="/">TECHNOLOGY</Link>
+                                        <Link href="/">March 26, 2020</Link>
                                     </div>
-                                    <h4><a onClick={() => router.push('/post1')}>Copa America: Luis Suarez from
-                                        devastated US</a></h4>
+                                    <h4><Link href="/post1">Copa America: Luis Suarez from
+                                        devastated US</Link></h4>
                                     <div className="space-10"/>
                                     <p className="post-p">The property, complete with 30-seat
                                         screening from room, a 100-seat amphitheater and a swimming
                                         pond with sandy shower…</p>
                                     <div className="space-20"/>
-                                    <a onClick={() => router.push('/')} className="readmore">Read More</a>
+                                    <Link href="/" className="readmore">Read More</Link>
                                 </div>
                             </div>
                         </div>
