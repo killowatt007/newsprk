@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Heading from "../uiStyle/Heading";
 import Swiper from 'react-id-swiper';
 import {useRouter} from "next/router";
 import FontAwesome from "../uiStyle/FontAwesome";
+import { useRef } from 'react';
 
 const news = [
     {
@@ -44,18 +45,18 @@ const news = [
 ];
 
 const FeatureNews = ({className}) => {
-    const [swiper, setSwiper] = useState(null);
     const router = useRouter()
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
 
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
     const params = {
@@ -93,7 +94,7 @@ const FeatureNews = ({className}) => {
                     <div className="col-12">
                         {/*CAROUSEL START*/}
                         <div className="feature_carousel nav_style1">
-                            <Swiper getSwiper={setSwiper} {...params}>
+                            <Swiper ref={swip} {...params}>
                                 {news.map((item, i) => (
                                     <div key={i} className="single_post post_type6 post_type7">
                                         <div className="post_img gradient1">

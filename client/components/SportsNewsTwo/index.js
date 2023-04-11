@@ -1,14 +1,14 @@
 import React, {Fragment} from 'react';
-import {Link} from "react-router-dom";
-
-import sports41 from '../../doc/img/sports/sports41.jpg';
-import sports42 from '../../doc/img/sports/sports42.jpg';
-import sports43 from '../../doc/img/sports/sports43.jpg';
-import sports44 from '../../doc/img/sports/sports44.jpg';
-import sports45 from '../../doc/img/sports/sports45.jpg';
-import sports46 from '../../doc/img/sports/sports46.jpg';
-import sports47 from '../../doc/img/sports/sports47.jpg';
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
+
+const sports41 = '/img/sports/sports41.jpg';
+const sports42 = '/img/sports/sports42.jpg';
+const sports43 = '/img/sports/sports43.jpg';
+const sports44 = '/img/sports/sports44.jpg';
+const sports45 = '/img/sports/sports45.jpg';
+const sports46 = '/img/sports/sports46.jpg';
+const sports47 = '/img/sports/sports47.jpg';
 
 const sportsNews = [
     {
@@ -47,21 +47,21 @@ const SportsNewsTwo = () => {
                 <div className="single_post type18">
                     <div className="post_img">
                         <div className="img_wrap">
-                            <Link to="/">
+                            <Link href="/">
                                 <img src={sports41} alt="sports41"/>
                             </Link>
                         </div>
                         <span className="batch3 date">April 26, 2020</span>
                     </div>
                     <div className="single_post_text py0">
-                        <h4><Link to="/post1">Copa America: Luis Suarez from devastated US</Link></h4>
+                        <h4><Link href="/post1">Copa America: Luis Suarez from devastated US</Link></h4>
                         <div className="space-10"/>
                         <p className="post-p">The property, complete with seates screening from room amphitheater
                             pond with sandy</p>
                         <ul className="mt10 like_cm">
-                            <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="share"/> 6745</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -75,16 +75,16 @@ const SportsNewsTwo = () => {
                         <div className="single_post type10 type16 widgets_small mb15">
                             <div className="post_img">
                                 <div className="img_wrap">
-                                    <Link to="/">
+                                    <Link href="/">
                                         <img src={item.photo} alt="thumb"/>
                                     </Link>
                                 </div>
                             </div>
                             <div className="single_post_text">
-                                <h4><Link to="/">{item.title}</Link></h4>
+                                <h4><Link href="/">{item.title}</Link></h4>
                                 <ul className="like_cm">
-                                    <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                                    <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
+                                    <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                                    <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ const SportsNewsTwo = () => {
                     </Fragment>
                 ))}
                 <div className="space-20"/>
-                <Link to="/" className="showmore">Show more</Link>
+                <Link href="/" className="showmore">Show more</Link>
             </div>
         </div>
     );

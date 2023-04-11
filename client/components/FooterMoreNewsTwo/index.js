@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 
 const news = [
     {
@@ -29,12 +29,12 @@ const FooterMoreNewsTwo = () => {
                     <Fragment key={i}>
                         <div className="single_more_news">
                             <p className="meta">TECHNOLOGY</p>
-                            <Link to="/">{item.title}</Link>
+                            <Link href="/">{item.title}</Link>
                             <p>{item.desc}</p>
                             <ul className="mt20 like_cm">
-                                <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                                <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                                <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li>
+                                <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                                <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
+                                <li><Link href="/"><FontAwesome name="share"/> 6745</Link></li>
                             </ul>
                         </div>
                         {i + 1 < news.length ? <Fragment>

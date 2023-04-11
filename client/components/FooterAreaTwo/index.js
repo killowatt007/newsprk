@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FooterCopyright from "../FooterCopyright";
 import FollowUs from "../FollowUs";
 import NewsLetter from "../NewsLetter";
@@ -8,11 +8,11 @@ import WidgetMorenews from "../WidgetMorenews";
 import TwitterfeedTwo from "../TwitterfeedTwo";
 
 // images
-import logo from '../../doc/img/logo/logo.png';
-import banner from '../../doc/img/add/add21.jpg';
-import phone_black from '../../doc/img/icon/phone_black.png';
-import speaker_black from '../../doc/img/icon/speaker_black.png';
-import envelope_black from '../../doc/img/icon/envelope_black.png';
+const logo = '/img/logo/logo.png';
+const banner = '/img/add/add21.jpg';
+const phone_black = '/img/icon/phone_black.png';
+const speaker_black = '/img/icon/speaker_black.png';
+const envelope_black = '/img/icon/envelope_black.png';
 
 const FooterAreaTwo = () => {
     return (
@@ -22,7 +22,7 @@ const FooterAreaTwo = () => {
                     <div className="col-md-6 col-lg-4">
                         <div className="single_footer3 mb30">
                             <div className="logo">
-                                <Link to="/">
+                                <Link href="/">
                                     <img src={logo} alt="logo"/>
                                 </Link>
                                 <div className="space-20"/>
@@ -37,19 +37,19 @@ const FooterAreaTwo = () => {
                                 <div className="fcicon">
                                     <img src={phone_black} alt="phone_black"/>
                                 </div>
-                                <Link to="/">On your mobile</Link>
+                                <Link href="/">On your mobile</Link>
                             </div>
                             <div className="single_fcontact">
                                 <div className="fcicon">
                                     <img src={speaker_black} alt="speaker_black"/>
                                 </div>
-                                <Link to="/">On smart speakers</Link>
+                                <Link href="/">On smart speakers</Link>
                             </div>
                             <div className="single_fcontact">
                                 <div className="fcicon">
                                     <img src={envelope_black} alt="envelope_black"/>
                                 </div>
-                                <Link to="/">Contact Newspark news</Link>
+                                <Link href="/">Contact Newspark news</Link>
                             </div>
                         </div>
                         <div className="space-30"/>
@@ -60,24 +60,24 @@ const FooterAreaTwo = () => {
                             <div className="row">
                                 <div className="col-lg-6">
                                     <ul>
-                                        <li><Link to="/">Politics</Link></li>
-                                        <li><Link to="/">Business</Link></li>
-                                        <li><Link to="/">TECHNOLOGY</Link></li>
-                                        <li><Link to="/">Science</Link></li>
-                                        <li><Link to="/">Health</Link></li>
-                                        <li><Link to="/">Sports</Link></li>
-                                        <li><Link to="/">Entertainment</Link></li>
+                                        <li><Link href="/">Politics</Link></li>
+                                        <li><Link href="/">Business</Link></li>
+                                        <li><Link href="/">TECHNOLOGY</Link></li>
+                                        <li><Link href="/">Science</Link></li>
+                                        <li><Link href="/">Health</Link></li>
+                                        <li><Link href="/">Sports</Link></li>
+                                        <li><Link href="/">Entertainment</Link></li>
                                     </ul>
                                 </div>
                                 <div className="col-lg-6">
                                     <ul>
-                                        <li><Link to="/">Education</Link></li>
-                                        <li><Link to="/">Obituaries</Link></li>
-                                        <li><Link to="/">Corrections</Link></li>
-                                        <li><Link to="/">Education</Link></li>
-                                        <li><Link to="/">Today’s Paper</Link></li>
-                                        <li><Link to="/">Corrections</Link></li>
-                                        <li><Link to="/">Foods</Link></li>
+                                        <li><Link href="/">Education</Link></li>
+                                        <li><Link href="/">Obituaries</Link></li>
+                                        <li><Link href="/">Corrections</Link></li>
+                                        <li><Link href="/">Education</Link></li>
+                                        <li><Link href="/">Today’s Paper</Link></li>
+                                        <li><Link href="/">Corrections</Link></li>
+                                        <li><Link href="/">Foods</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -91,8 +91,8 @@ const FooterAreaTwo = () => {
                         <div className="contacts3">
                             <div className="single_contact3">
                                 <h6>Let's Talk</h6>
-                                <Link to="/">+41 27 966 26690</Link>
-                                <Link to="/">+880 1945 381758</Link>
+                                <Link href="/">+41 27 966 26690</Link>
+                                <Link href="/">+880 1945 381758</Link>
                             </div>
                             <div className="single_contact3">
                                 <h6>Let's Chat</h6>
@@ -116,7 +116,7 @@ const FooterAreaTwo = () => {
                                 <NewsLetter input_white={true} className="news3bg mb30 border-radious5"/>
                                 <FollowUs title="Follow Us"/>
                                 <div className="banner2 mb30 ">
-                                    <Link to="/" className="border-radious5">
+                                    <Link href="/" className="border-radious5">
                                         <img src={banner} alt="banner"/>
                                     </Link>
                                 </div>
@@ -133,10 +133,10 @@ const FooterAreaTwo = () => {
                                 </div>
                                 <div className="col-lg-6">
                                     <div className="download_btn_group">
-                                        <Link className="app_btn" to="/"> <FontAwesome name="google-play"/>
+                                        <Link className="app_btn" href="/"> <FontAwesome name="google-play"/>
                                             Download on the <span>google play</span>
                                         </Link>
-                                        <Link className="app_btn" to="/"> <FontAwesome name="apple"/>
+                                        <Link className="app_btn" href="/"> <FontAwesome name="apple"/>
                                             Download on the <span>app store</span>
                                         </Link>
                                     </div>

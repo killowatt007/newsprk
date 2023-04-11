@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
-// import {Link} from "react-router-dom";
+import React from 'react';
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
+import { useRef } from 'react';
 
-import smslide41 from '../../doc/img/trending/smslide41.jpg';
-import smslide42 from '../../doc/img/trending/smslide42.jpg';
-import smslide43 from '../../doc/img/trending/smslide43.jpg';
+const smslide41 = '/img/trending/smslide41.jpg';
+const smslide42 = '/img/trending/smslide42.jpg';
+const smslide43 = '/img/trending/smslide43.jpg';
 
 const businessPosts = [
     {
@@ -28,17 +29,16 @@ const businessPosts = [
     },
 ];
 const BusinessCarousel = () => {
-    const [swiper, setSwiper] = useState(null);
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
-
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
 
@@ -63,28 +63,28 @@ const BusinessCarousel = () => {
     };
     return (
         <div className="business_carousel nav_style4 mb30 ">
-            <Swiper getSwiper={setSwiper} {...params}>
+            <Swiper ref={swip} {...params}>
                 {businessPosts.map((item, i) => (
                     <div key={i} className="business_carousel_items white_bg padding20 shadow7">
                         <div className="single_international">
                             <p className="meta before">{item.category}</p>
-                            {/* <h4><Link to="/">{item.title}</Link></h4> */}
+                            <h4><Link href="/">{item.title}</Link></h4>
                             <div className="row">
                                 <div className="col-8 align-self-center">
                                     <p>{item.description}</p>
                                 </div>
                                 <div className="col-4 align-self-center">
                                     <div className="img_wrap">
-                                        {/* <Link to="/">
+                                        <Link href="/">
                                             <img src={item.photo} alt="thumb"/>
-                                        </Link> */}
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                             <ul className="mt20 like_cm">
-                                {/* <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                                <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                                <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li> */}
+                                <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                                <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
+                                <li><Link href="/"><FontAwesome name="share"/> 6745</Link></li>
                             </ul>
                         </div>
                     </div>

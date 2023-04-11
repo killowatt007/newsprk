@@ -3,6 +3,7 @@ import FontAwesome from "../uiStyle/FontAwesome";
 import SearchModal from "../SearchModal";
 import SidebarMenu from "../SidebarMenu";
 import {useRouter} from "next/router";
+import Link from 'next/link'
 
 const tempIcon = '/img/icon/temp.png';
 
@@ -443,20 +444,20 @@ const MainMenu = ({className, dark}) => {
                                                 nav-item`}>
                                                     {item.child 
                                                         ? 
-                                                            <a 
-                                                                onClick={() => router.push('/')}
+                                                            <Link
+                                                                href="/"
                                                                 className="menu-dropdown"
                                                                 data-toggle="dropdown">
                                                                 {item.linkText}
                                                             <FontAwesome name={item.icon}/>
-                                                            </a>
+                                                            </Link>
                                                         : 
-                                                            <a 
-                                                                onClick={() => router.push(item.link)}
+                                                            <Link
+                                                                href={item.link}
                                                                 className="menu-dropdown"
                                                                 data-toggle="dropdown">{item.linkText} 
                                                             <FontAwesome name={item.icon}/>
-                                                            </a>
+                                                            </Link>
                                                     }
 
                                                     {item.child ?
@@ -467,23 +468,21 @@ const MainMenu = ({className, dark}) => {
                                                         `}>
                                                                     {sub_item.child 
                                                                         ?
-                                                                            <a 
-                                                                                onClick={() => router.push('/')}>
+                                                                            <Link href="/">
                                                                             {sub_item.linkText}
-                                                                            </a>
+                                                                            </Link>
                                                                         : 
-                                                                            <a
-                                                                                onClick={() => router.push(sub_item.link)}>
+                                                                            <Link href={sub_item.link}>
                                                                             {sub_item.linkText}
-                                                                            </a>
+                                                                            </Link>
                                                                     }
                                                                     {sub_item.third_menu ?
                                                                         <ul className="dropdown-menu">
                                                                             {sub_item.third_menu.map((third_item, i) => (
                                                                                 <li key={i}>
-                                                                                    <a onClick={() => router.push(third_item.link)}>
+                                                                                    <Link href={third_item.link}>
                                                                                         {third_item.linkText}
-                                                                                    </a>
+                                                                                    </Link>
                                                                                 </li>
                                                                             ))}
                                                                         </ul> : null}
@@ -496,7 +495,7 @@ const MainMenu = ({className, dark}) => {
                                             )) : null}
                                         </ul>
                                     </div>
-                                    {/* <SidebarMenu sideShow={sideShow} setSideShow={setSideShow} menus={arr}/> */}
+                                    <SidebarMenu sideShow={sideShow} setSideShow={setSideShow} menus={arr}/>
                                 </div>
                             </nav>
                             <div className="col-lg-4 align-self-center">

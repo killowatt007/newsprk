@@ -1,14 +1,15 @@
 import React, {Fragment, useState} from 'react';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
+import { useRef } from 'react';
 
 // images
-import trends1 from '../../doc/img/trending/transm23.jpg';
-import trends2 from '../../doc/img/trending/transm24.jpg';
-import trends3 from '../../doc/img/trending/transm25.jpg';
-import trends4 from '../../doc/img/trending/transm26.jpg';
-import trends5 from '../../doc/img/trending/transm27.jpg';
+const trends1 = '/img/trending/transm23.jpg';
+const trends2 = '/img/trending/transm24.jpg';
+const trends3 = '/img/trending/transm25.jpg';
+const trends4 = '/img/trending/transm26.jpg';
+const trends5 = '/img/trending/transm27.jpg';
 
 import {mostViewSort} from "../../utils/commonFunctions";
 
@@ -77,16 +78,16 @@ const trends = [
 
 const TrendingCarousel = () => {
     const [swiper, setSwiper] = useState(null);
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
-
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
 
@@ -96,20 +97,20 @@ const TrendingCarousel = () => {
     };
     return (
         <div className="popular_carousel multipleRowCarousel nav_style1">
-            <Swiper getSwiper={setSwiper} {...params}>
+            <Swiper ref={swip} {...params}>
                 {mostViewSort(trends).map((item, i) => (
                     <div key={i}
                          className={`single_post type10 type16 widgets_small ${i + 2 < trends.length ? 'mb15' : ''}`}>
                         <div className="post_img">
                             <div className="img_wrap">
-                                <Link to="/">
+                                <Link href="/">
                                     <img src={item.image} alt="thumb"/>
                                 </Link>
                             </div>
                         </div>
                         <div className="single_post_text">
-                            <h4><Link to="/post1">{item.title}</Link></h4>
-                            <div className="meta4"><Link to="/">{item.category}</Link></div>
+                            <h4><Link href="/post1">{item.title}</Link></h4>
+                            <div className="meta4"><Link href="/">{item.category}</Link></div>
                             {i + 2 < trends.length ? <Fragment>
                                 <div className="space-10"/>
                                 <div className="border_black"/>

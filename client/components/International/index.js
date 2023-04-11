@@ -1,10 +1,11 @@
 import React, {Fragment} from 'react';
-import most21 from "../../doc/img/most_view/most21.jpg";
-import most22 from "../../doc/img/most_view/most22.jpg";
-import most23 from "../../doc/img/most_view/most23.jpg";
-import most24 from "../../doc/img/most_view/most24.jpg";
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
+import Link from 'next/link';
+
+const most21 = "/img/most_view/most21.jpg";
+const most22 = "/img/most_view/most22.jpg";
+const most23 = "/img/most_view/most23.jpg";
+const most24 = "/img/most_view/most24.jpg";
 
 const posts = [
     {
@@ -44,11 +45,11 @@ const International = () => {
                 <Fragment key={i}>
                     <div className="single_international">
                         <p className="meta before">{item.category}</p>
-                        <h4><Link to="/post1">{item.title}</Link></h4>
+                        <h4><Link href="/post1">{item.title}</Link></h4>
                         <div className="space-10"/>
                         <div className="view_author">
                             <FontAwesome name="user-circle mr-1"/>
-                            <Link to="/">{item.author}</Link>
+                            <Link href="/">{item.author}</Link>
                         </div>
                         <div className="space-5"/>
                         <div className="row">
@@ -57,16 +58,16 @@ const International = () => {
                             </div>
                             <div className="col-4 align-self-center">
                                 <div className="img_wrap">
-                                    <Link to="/">
+                                    <Link href="/">
                                         <img src={item.photo} alt="thumb"/>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <ul className="mt20 like_cm">
-                            <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="share"/> 6745</Link></li>
                         </ul>
                     </div>
                     {i + 1 < posts.length ? <Fragment>

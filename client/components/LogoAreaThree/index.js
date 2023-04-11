@@ -1,22 +1,23 @@
-import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import React from 'react';
+import Link from 'next/link';
 import Swiper from 'react-id-swiper';
 import FontAwesome from "../uiStyle/FontAwesome";
-import tempIcon from "../../doc/img/icon/s4.png";
-import logo from "../../doc/img/logo/logo41.png";
+import { useRef } from 'react';
+
+const tempIcon = "/img/icon/s4.png";
+const logo = "/img/logo/logo41.png";
 
 const LogoAreaThree = () => {
-    const [swiper, setSwiper] = useState(null);
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
-
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
     const params = {
@@ -31,7 +32,7 @@ const LogoAreaThree = () => {
                 <div className="row">
                     <div className="col-lg-3 align-self-center">
                         <div className="logo4">
-                            <Link to="/index">
+                            <Link href="/index">
                                 <img src={logo} alt="logo"/>
                             </Link>
                         </div>
@@ -45,21 +46,21 @@ const LogoAreaThree = () => {
                                             <div className="trancarousel_area">
                                                 <p className="trand">Tranding</p>
                                                 <div className="nav_style1">
-                                                    <Swiper getSwiper={setSwiper} className="trancarousel" {...params}>
+                                                    <Swiper ref={swip} className="trancarousel" {...params}>
                                                         <div className="trancarousel_item">
-                                                            <p><Link to="/">Top 10 Best Movies of 2018 So Far: Great
+                                                            <p><Link href="/">Top 10 Best Movies of 2018 So Far: Great
                                                                 Movies To Watch
                                                                 Now</Link>
                                                             </p>
                                                         </div>
                                                         <div className="trancarousel_item">
-                                                            <p><Link to="/">Top 10 Best Movies of 2018 So Far: Great
+                                                            <p><Link href="/">Top 10 Best Movies of 2018 So Far: Great
                                                                 Movies To Watch
                                                                 Now</Link>
                                                             </p>
                                                         </div>
                                                         <div className="trancarousel_item">
-                                                            <p><Link to="/">Top 10 Best Movies of 2018 So Far: Great
+                                                            <p><Link href="/">Top 10 Best Movies of 2018 So Far: Great
                                                                 Movies To Watch
                                                                 Now</Link>
                                                             </p>
@@ -81,15 +82,15 @@ const LogoAreaThree = () => {
                                                 <div className="user3"><FontAwesome name="user-circle"/></div>
                                                 <div className="lang-3">
                                                     <ul>
-                                                        <li><Link to="/">English <FontAwesome name="angle-down"/></Link>
+                                                        <li><Link href="/">English <FontAwesome name="angle-down"/></Link>
                                                             <ul>
-                                                                <li><Link to="/">Spanish</Link>
+                                                                <li><Link href="/">Spanish</Link>
                                                                 </li>
-                                                                <li><Link to="/">China</Link>
+                                                                <li><Link href="/">China</Link>
                                                                 </li>
-                                                                <li><Link to="/">Hindi</Link>
+                                                                <li><Link href="/">Hindi</Link>
                                                                 </li>
-                                                                <li><Link to="/">Corian</Link>
+                                                                <li><Link href="/">Corian</Link>
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -125,10 +126,10 @@ const LogoAreaThree = () => {
                             <div className="col-md-6 col-lg-4 align-self-center fix_width_social">
                                 <div className="social4 text-right">
                                     <ul className="inline">
-                                        <li><Link to="/"><FontAwesome name="twitter"/></Link></li>
-                                        <li><Link to="/"><FontAwesome name="facebook-f"/></Link></li>
-                                        <li><Link to="/"><FontAwesome name="youtube-play"/></Link></li>
-                                        <li><Link to="/"><FontAwesome name="instagram"/></Link></li>
+                                        <li><Link href="/"><FontAwesome name="twitter"/></Link></li>
+                                        <li><Link href="/"><FontAwesome name="facebook-f"/></Link></li>
+                                        <li><Link href="/"><FontAwesome name="youtube-play"/></Link></li>
+                                        <li><Link href="/"><FontAwesome name="instagram"/></Link></li>
                                     </ul>
                                 </div>
                             </div>

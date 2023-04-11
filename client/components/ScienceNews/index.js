@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import Swiper from 'react-id-swiper';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
 import {mostViewSort} from "../../utils/commonFunctions";
+import { useRef } from 'react';
 
-import science41 from '../../doc/img/science/science41.jpg';
+const science41 = '/img/science/science41.jpg';
 
 const posts = [
     {
@@ -49,17 +50,16 @@ const posts = [
     },
 ];
 const ScienceNews = () => {
-    const [swiper, setSwiper] = useState(null);
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
-
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
     const params = {
@@ -85,11 +85,11 @@ const ScienceNews = () => {
         <div className="science_news border-radious5 mb30 shadow7 padding20">
             <h3 className="widget-title">Science News</h3>
             <div className="science_carousel multipleRowCarousel nav_style4">
-                <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper ref={swip} {...params}>
                     {mostViewSort(posts).map((item, i) => (
                         <div key={i} className="single_post mb30 type18 rashed">
                             <div className="single_post_text">
-                                <h4><Link to="/post1">{item.title}</Link></h4>
+                                <h4><Link href="/post1">{item.title}</Link></h4>
                                 <div className="space-10"/>
                             </div>
                             <div className="science_mid">
@@ -97,7 +97,7 @@ const ScienceNews = () => {
                                     <div className="col-sm-4 align-self-center">
                                         <div className="border-radious3">
                                             <div className="img_wap">
-                                                <Link to="/"><img src={item.photo} alt="thumb"/></Link>
+                                                <Link href="/"><img src={item.photo} alt="thumb"/></Link>
                                             </div>
                                         </div>
                                     </div>

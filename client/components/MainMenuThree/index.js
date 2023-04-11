@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import {NavLink} from "react-router-dom";
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
 import SidebarMenu from "../SidebarMenu";
 import SearchModal from "../SearchModal";
@@ -230,15 +230,15 @@ const MainMenuThree = ({className}) => {
                                                         className={`
                                                 ${item.child ? 'dropdown' : ''}
                                                 nav-item`}>
-                                                        {item.child ? <NavLink onClick={e => e.preventDefault()} to="/"
+                                                        {item.child ? <Link href="/"
                                                                                className="menu-dropdown"
                                                                                data-toggle="dropdown">{item.linkText}
                                                                 <FontAwesome
-                                                                    name={item.icon}/></NavLink>
-                                                            : <NavLink to={item.link} className="menu-dropdown"
+                                                                    name={item.icon}/></Link>
+                                                            : <Link href={item.link} className="menu-dropdown"
                                                                        data-toggle="dropdown">{item.linkText}
                                                                 <FontAwesome
-                                                                    name={item.icon}/></NavLink>}
+                                                                    name={item.icon}/></Link>}
 
                                                         {item.child ?
                                                             <ul className="dropdown-menu" role="menu">
@@ -247,15 +247,15 @@ const MainMenuThree = ({className}) => {
                                                                         className={`${sub_item.child ? 'dropdown-submenu' : null}
                                                         `}>
                                                                         {sub_item.child ?
-                                                                            <NavLink onClick={e => e.preventDefault()}
-                                                                                     to="/">{sub_item.linkText}</NavLink>
-                                                                            : <NavLink
-                                                                                to={sub_item.link}>{sub_item.linkText}</NavLink>}
+                                                                            <Link
+                                                                                     href="/">{sub_item.linkText}</Link>
+                                                                            : <Link
+                                                                                href={sub_item.link}>{sub_item.linkText}</Link>}
                                                                         {sub_item.third_menu ?
                                                                             <ul className="dropdown-menu">
                                                                                 {sub_item.third_menu.map((third_item, i) => (
-                                                                                    <li key={i}><NavLink
-                                                                                        to={third_item.link}>{third_item.linkText}</NavLink>
+                                                                                    <li key={i}><Link
+                                                                                        href={third_item.link}>{third_item.linkText}</Link>
                                                                                     </li>
                                                                                 ))}
                                                                             </ul> : null}

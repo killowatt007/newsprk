@@ -1,8 +1,9 @@
 import React from 'react';
-import opinion41 from '../../doc/img/opinion/opinion41.jpg';
-import opinion42 from '../../doc/img/opinion/opinion42.jpg';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
+
+const opinion41 = '/img/opinion/opinion41.jpg';
+const opinion42 = '/img/opinion/opinion42.jpg';
 
 const opinionPosts = [
     {
@@ -26,17 +27,17 @@ const WidgetOpinionNews = () => {
                 <div key={i} className="single_post mb30 type18">
                     <div className="post_img">
                         <div className="img_wrap">
-                            <Link to="/"><img src={item.photo} alt="thumb"/></Link>
+                            <Link href="/"><img src={item.photo} alt="thumb"/></Link>
                         </div>
                     </div>
                     <div className="single_post_text">
-                        <h4><Link to="/">{item.title}</Link></h4>
+                        <h4><Link href="/">{item.title}</Link></h4>
                         <div className="space-10"/>
                         <p className="post-p">{item.desc}</p>
                         <ul className="mt20 like_cm">
-                            <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="share"/> 6745</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
 
 const WidgetFinanceTwo = ({title, data}) => {
@@ -12,7 +12,7 @@ const WidgetFinanceTwo = ({title, data}) => {
                 <div key={i} className="single_post mb30 type18">
                     <div className="post_img">
                         <div className="img_wrap">
-                            <Link to="/">
+                            <Link href="/">
                                 <img src={item.photo} alt="thumb"/>
                             </Link>
                         </div>
@@ -21,13 +21,13 @@ const WidgetFinanceTwo = ({title, data}) => {
 								</span>
                     </div>
                     <div className="single_post_text py0">
-                        <h4><Link to="/post1">{item.title}</Link></h4>
+                        <h4><Link href="/post1">{item.title}</Link></h4>
                         <div className="space-10"/>
                         <p className="post-p">{item.description}</p>
                         <ul className="mt10 like_cm">
-                            <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="share"/> 6745</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -1,8 +1,9 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import gallery41 from '../../doc/img/gallary/gallery41.jpg';
-import gallery42 from '../../doc/img/gallary/gallery42.jpg';
+import Link from 'next/link';
 import Swiper from 'react-id-swiper';
+
+const gallery41 = '/img/gallary/gallery41.jpg';
+const gallery42 = '/img/gallary/gallery42.jpg';
 
 const galleryPosts = [
     {
@@ -32,7 +33,7 @@ const GalleryCarousel = () => {
                         <div key={i} className="single_post post_type6 border-radious7 xs-mb30">
                             <div className="post_img gradient1">
                                 <div className="img_wrap">
-                                    <Link to="/">
+                                    <Link href="/">
                                         <img src={item.photo} alt="thumb"/>
                                     </Link>
                                 </div>
@@ -40,7 +41,7 @@ const GalleryCarousel = () => {
                             <div className="single_post_text">
                                 <p className="meta meta_style4">Business <span>&nbsp;| &nbsp; March 26, 2020</span>
                                 </p>
-                                <h4><Link to="/">{item.title}</Link></h4>
+                                <h4><Link href="/">{item.title}</Link></h4>
                             </div>
                         </div>
                     ))}

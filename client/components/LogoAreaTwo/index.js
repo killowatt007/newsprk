@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
-import logo from '../../doc/img/logo/logo.png';
-import tempIcon from "../../doc/img/icon/temp.png";
+import Link from 'next/link';
+
+const logo = '/img/logo/logo.png';
+const tempIcon = "/img/icon/temp.png";
 
 const LogoAreaTwo = () => {
     const [search, setSearch] = useState('');
@@ -15,7 +16,7 @@ const LogoAreaTwo = () => {
                 <div className="row">
                     <div className="col-lg-3 align-self-center">
                         <div className="logo">
-                            <Link to="/">
+                            <Link href="/">
                                 <img src={logo} alt="logo"/>
                             </Link>
                         </div>

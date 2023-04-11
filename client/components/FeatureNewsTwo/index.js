@@ -1,10 +1,12 @@
 import React, {Fragment, useState} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
-import feature21 from '../../doc/img/feature/feature21.jpg';
-import feature22 from '../../doc/img/feature/feature22.jpg';
-import feature23 from '../../doc/img/feature/feature23.jpg';
-// import {Link} from "react-router-dom";
+import { useRef } from 'react';
+import Link from 'next/link';
+
+const feature21 = '/img/feature/feature21.jpg';
+const feature22 = '/img/feature/feature22.jpg';
+const feature23 = '/img/feature/feature23.jpg';
 
 const feature_news = [
     {
@@ -41,18 +43,19 @@ const feature_news = [
 
 const FeatureNewsTwo = () => {
     const [swiper, setSwiper] = useState(null);
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
+        }
+    };
+    const goPrev = () => {
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
 
-    const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
-        }
-    };
     const params = {
         slidesPerView: 3,
         spaceBetween: 25,
@@ -86,14 +89,14 @@ const FeatureNewsTwo = () => {
                     </div>
                 </div>
                 <div className="feature3_carousel owl-carousel nav_style1">
-                    <Swiper getSwiper={setSwiper} {...params}>
+                    <Swiper ref={swip} {...params}>
                         {feature_news.map((item, i) => (
                             <div key={i} className="single_post type19 border-radious5 white_bg">
                                 <div className="post_img">
                                     <div className="img_wrap">
-                                        {/* <Link to="/">
+                                        <Link href="/">
                                             <img src={item.photo} alt="thumb"/>
-                                        </Link> */}
+                                        </Link>
                                     </div>
                                     <span className="batch3 date">
                                         {item.category}

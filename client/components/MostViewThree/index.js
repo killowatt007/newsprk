@@ -1,11 +1,11 @@
 import React, {Fragment} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 
 // images
-import most26 from '../../doc/img/most_view/most26.jpg';
-import most27 from '../../doc/img/most_view/most27.jpg';
-import most28 from '../../doc/img/most_view/most28.jpg';
+const most26 = '/img/most_view/most26.jpg';
+const most27 = '/img/most_view/most27.jpg';
+const most28 = '/img/most_view/most28.jpg';
 
 const posts = [
     {
@@ -39,12 +39,12 @@ const MostViewThree = () => {
                     <div key={i} className="single_post type18">
                         <div className="post_img">
                             <div className="img_wrap">
-                                <Link to="/"><img src={item.photo} alt="thumb"/></Link>
+                                <Link href="/"><img src={item.photo} alt="thumb"/></Link>
                             </div>
                             <span className="batch3 date">{item.date}</span>
                         </div>
                         <div className="single_post_text">
-                            <h4><Link to="/post1">{item.title}</Link></h4>
+                            <h4><Link href="/post1">{item.title}</Link></h4>
                             <div className="space-10"/>
                             <p className="post-p">{item.description}</p>
                             <div className="view_author_details">
@@ -53,7 +53,7 @@ const MostViewThree = () => {
                                     <div className="col-6">
                                         <div className="view_author align-self-center">
                                             <FontAwesome name="user-circle mr-1"/>
-                                            <Link to="/">{item.author}</Link>
+                                            <Link href="/">{item.author}</Link>
                                         </div>
                                     </div>
                                     <div className="col-6 text-right align-self-center">
@@ -71,7 +71,7 @@ const MostViewThree = () => {
                 </Fragment>
             ))}
             <div className="space-20"/>
-            <Link to="/" className="showmore">Show more</Link>
+            <Link href="/" className="showmore">Show more</Link>
         </div>
     );
 };

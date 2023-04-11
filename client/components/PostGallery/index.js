@@ -3,6 +3,7 @@ import WidgetTab from "../WidgetTab";
 import Slider from "react-slick";
 import FontAwesome from "../uiStyle/FontAwesome";
 import ModalVideo from 'react-modal-video'
+import Link from 'next/link'
 
 const thumbs = [
     '/img/blog/post_gsi1.jpg',
@@ -179,17 +180,17 @@ class PostGallery extends Component {
                                                     </div>
                                                     <div className="single_post_text">
                                                         <div className="meta meta_separator1">
-                                                            <a onClick={() => router.push('#')}>
+                                                            <Link href="#">
                                                                 {item.category}
-                                                            </a>
-                                                            <a onClick={() => router.push('#')}>
+                                                            </Link>
+                                                            <Link href="#">
                                                                 {item.date}
-                                                            </a>
+                                                            </Link>
                                                         </div>
                                                         <h4>
-                                                            <a className="play_btn" onClick={() => router.push('/video_post1')}>
+                                                            <Link href="video_post1">
                                                                 {item.title}
-                                                            </a>
+                                                            </Link>
                                                         </h4>
                                                         <div className="space-10"/>
                                                         <p className="post-p">{item.body}</p>

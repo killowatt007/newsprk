@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import Swiper from 'react-id-swiper';
 
-import hero1 from '../../doc/img/bg/hero1.jpg';
-import hero2 from '../../doc/img/bg/hero2.jpg';
-import hero3 from '../../doc/img/bg/hero3.jpg';
+const hero1 = '/img/bg/hero1.jpg';
+const hero2 = '/img/bg/hero2.jpg';
+const hero3 = '/img/bg/hero3.jpg';
 
 const slider = [
     {

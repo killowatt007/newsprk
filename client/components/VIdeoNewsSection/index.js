@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import fultab41 from '../../doc/img/tab/fultab41.jpg';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
+
+const fultab41 = '/img/tab/fultab41.jpg';
 
 const videoPosts = [
     {
@@ -46,7 +47,7 @@ const VIdeoNewsSection = () => {
                                 <div className="col-lg-8">
                                     <div className="tatal_video4"
                                          style={{background: `url(${fultab41}) center/cover no-repeat`}}>
-                                        <div className="video4_content"><Link to="/">Investors explain corona impact on
+                                        <div className="video4_content"><Link href="/">Investors explain corona impact on
                                             consumer startups</Link>
                                             <div className="video4_video">
                                                 <div className="video4_icon"><FontAwesome name="play"/>
@@ -64,7 +65,7 @@ const VIdeoNewsSection = () => {
                                                     <div className="video_list_author"><FontAwesome name="play-circle"/>
                                                         <h6>Business <span>May 2020</span></h6>
                                                     </div>
-                                                    <h4><Link to="/">{item.title}</Link></h4>
+                                                    <h4><Link href="/">{item.title}</Link></h4>
                                                 </div>
                                                 {i + 1 < videoPosts.length ? <Fragment>
                                                     <div className="space-15"/>

@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
 import {useRouter} from "next/router";
+import { useRef } from 'react';
 
 // images
 const sports2 = '/img/sports/sports2.jpg';
@@ -81,18 +82,18 @@ const mostView = [
 ];
 
 const SportsCarousel = ({dark}) => {
-    const [swiper, setSwiper] = useState(null);
     const router = useRouter()
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
 
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
 
@@ -104,7 +105,7 @@ const SportsCarousel = ({dark}) => {
         <div className="widget tab_widgets">
             <div className="post_type2_carousel multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper ref={swip} {...params}>
                     {mostViewSort(mostView).map((item, i) => (
                         <div key={i} className="single_post2_carousel">
                             <div className="single_post widgets_small">

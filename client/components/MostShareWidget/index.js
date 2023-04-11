@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
 import {useRouter} from "next/router";
+import { useRef } from 'react';
 
 // images
 import {mostViewSort} from "../../utils/commonFunctions";
@@ -60,18 +61,18 @@ const mostView = [
 ];
 
 const MostShareWidget = ({title, dark}) => {
-    const [swiper, setSwiper] = useState(null);
     const router = useRouter()
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
 
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
 
@@ -84,7 +85,7 @@ const MostShareWidget = ({title, dark}) => {
             <h2 className="widget-title">{title ? title : 'Most View'}</h2>
             <div className="post_type2_carousel multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper ref={swip} {...params}>
                     {mostViewSort(mostView).map((item, i) => (
                         <div key={i} className="carousel_items">
                             <div className="single_post widgets_small widgets_type4">

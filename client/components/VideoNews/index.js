@@ -1,16 +1,16 @@
 import React, {Fragment, useState} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import ModalVideo from 'react-modal-video'
 
 // images
-import video21 from '../../doc/img/video/video21.jpg';
-import video22 from '../../doc/img/video/video22.jpg';
-import video23 from '../../doc/img/video/video23.jpg';
-import video24 from '../../doc/img/video/video24.jpg';
-import video25 from '../../doc/img/video/video25.jpg';
-import video26 from '../../doc/img/video/video26.jpg';
-import video27 from '../../doc/img/video/video27.jpg';
+const video21 = '/img/video/video21.jpg';
+const video22 = '/img/video/video22.jpg';
+const video23 = '/img/video/video23.jpg';
+const video24 = '/img/video/video24.jpg';
+const video25 = '/img/video/video25.jpg';
+const video26 = '/img/video/video26.jpg';
+const video27 = '/img/video/video27.jpg';
 
 const posts = [
     {
@@ -70,7 +70,7 @@ const VideoNews = () => {
                                 <div className="single_post post_type3 post_type11 post_type21 xs-mb30">
                                     <div className="post_img border-radious7">
                                         <div className="img_wrap">
-                                            <Link to="/" className="play_btn">
+                                            <Link href="/" className="play_btn">
                                                 <img src={video21} alt="video21"/>
                                             </Link>
                                         </div>
@@ -85,18 +85,18 @@ const VideoNews = () => {
                                         </div>
                                         <div className="social_share">
                                             <ul className="meta_share inline">
-                                                <li><Link to="/"><FontAwesome name="bookmark"/></Link></li>
-                                                <li><Link to="/"><FontAwesome name="share"/></Link></li>
+                                                <li><Link href="/"><FontAwesome name="bookmark"/></Link></li>
+                                                <li><Link href="/"><FontAwesome name="share"/></Link></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="single_post_text">
-                                        <h4><Link to="/post1">ICC Men’s Cricket World Cup digital content delivers
+                                        <h4><Link href="/post1">ICC Men’s Cricket World Cup digital content delivers
                                             record-breaking numbers</Link></h4>
                                         <div className="space-10"/>
                                         <ul className=" like_cm">
-                                            <li><Link to="/"><FontAwesome name="eye"/>6745</Link></li>
-                                            <li><Link to="/"><FontAwesome name="heart"/>6745</Link></li>
+                                            <li><Link href="/"><FontAwesome name="eye"/>6745</Link></li>
+                                            <li><Link href="/"><FontAwesome name="heart"/>6745</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -107,16 +107,16 @@ const VideoNews = () => {
                                         <div className="post_img">
                                             <div className="img_wrap">
                                                 <div className="img_wrap">
-                                                    <Link to="/" className="play_btn">
+                                                    <Link href="/" className="play_btn">
                                                         <img src={item.photo} alt="thumb"/>
                                                     </Link>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="single_post_text">
-                                            <h4><Link to="/post1">{item.title}</Link></h4>
-                                            <div className="meta2"><Link to="/">{item.category}</Link>
-                                                <Link to="/">{item.date}</Link>
+                                            <h4><Link href="/post1">{item.title}</Link></h4>
+                                            <div className="meta2"><Link href="/">{item.category}</Link>
+                                                <Link href="/">{item.date}</Link>
                                             </div>
                                             {i + 1 < posts.length ? <Fragment>
                                                 <div className="space-5"/>

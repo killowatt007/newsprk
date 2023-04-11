@@ -1,21 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Swiper from 'react-id-swiper';
 import FontAwesome from "../uiStyle/FontAwesome";
 import {useRouter} from "next/router";
+import { useRef } from 'react';
 
 const TopBar = ({className, dark}) => {
-    const [swiper, setSwiper] = useState(null);
     const router = useRouter()
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
 
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
     const params = {
@@ -32,7 +33,7 @@ const TopBar = ({className, dark}) => {
                         <div className={`trancarousel_area ${dark ? 'white' : ''}`}>
                             <p className="trand">Tranding</p>
                             <div className="nav_style1">
-                                <Swiper getSwiper={setSwiper} className="trancarousel" {...params}>
+                                <Swiper ref={swip} className="trancarousel" {...params}>
                                     <div className="trancarousel_item">
                                         <p><a onClick={() => router.push('/')}>Top 10 Best Movies of 2018 So Far: Great Movies To Watch
                                             Now</a>

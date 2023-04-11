@@ -3,6 +3,7 @@ import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
 import ModalVideo from 'react-modal-video'
 import {useRouter} from "next/router";
+import { useRef } from 'react';
 
 const black_white1 = '/img/bg/black_white1.jpg';
 const black_white2 = '/img/bg/black_white2.jpg';
@@ -39,20 +40,20 @@ const mixArray = [
 ];
 
 const MixCarousel = ({className, dark}) => {
-    const [swiper, setSwiper] = useState(null);
     const [vModal, setvModal] = useState(false);
     const [videoId] = useState('0r6C3z3TEKw');
     const router = useRouter()
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
 
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
     const params = {
@@ -86,7 +87,7 @@ const MixCarousel = ({className, dark}) => {
                         <div className={`mix_carousel ${dark ? 'primay_bg' : ''}`}>
                             {/*CAROUSEL START*/}
                             <div className="single_mix_carousel nav_style3">
-                                <Swiper getSwiper={setSwiper} {...params}>
+                                <Swiper ref={swip} {...params}>
                                     {mixArray.map((item, i) => (
                                         <div key={i} className="single_post post_type6 post_type9">
                                             <div className="post_img gradient1">

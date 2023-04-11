@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 
 const posts = [
     {
@@ -33,12 +33,12 @@ const WidgetMorenews = () => {
                     <Fragment key={i}>
                         <div className="single_more_news">
                             <p className="meta">{item.category}</p>
-                            <h4><Link to="/">{item.title}</Link></h4>
+                            <h4><Link href="/">{item.title}</Link></h4>
                             <p>{item.description}</p>
                             <ul className="mt20 like_cm">
-                                <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                                <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                                <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li>
+                                <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                                <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
+                                <li><Link href="/"><FontAwesome name="share"/> 6745</Link></li>
                             </ul>
                         </div>
                         {i + 1 < posts.length ? <Fragment>

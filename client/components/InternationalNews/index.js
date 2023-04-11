@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
 
 const InternationalNews = ({title, showMore, className, data}) => {
@@ -10,7 +10,7 @@ const InternationalNews = ({title, showMore, className, data}) => {
                 <div key={i} className={`single_post post_type12 type20 ${i + 1 < data.length ? 'mb30' : ''}`}>
                     <div className="post_img">
                         <div className="img_wrap  border-radious5">
-                            <Link to="/">
+                            <Link href="/">
                                 <img src={item.photo} alt="thumb"/>
                             </Link>
                         </div>
@@ -19,28 +19,28 @@ const InternationalNews = ({title, showMore, className, data}) => {
                         <div className="row">
                             <div className="col-9 align-self-cnter">
                                 <div className="meta3">
-                                    <Link to="/">TECHNOLOGY</Link>
-                                    <Link to="/">March 26, 2020</Link>
+                                    <Link href="/">TECHNOLOGY</Link>
+                                    <Link href="/">March 26, 2020</Link>
                                 </div>
                             </div>
                             <div className="col-3 align-self-cnter">
                                 <div className="share_meta4 text-right">
                                     <ul className="inline">
-                                        <li><Link to="/"><FontAwesome name="bookmark"/></Link></li>
-                                        <li><Link to="/"><FontAwesome name="share"/></Link></li>
+                                        <li><Link href="/"><FontAwesome name="bookmark"/></Link></li>
+                                        <li><Link href="/"><FontAwesome name="share"/></Link></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <h4><Link to="/">{item.title}</Link></h4>
+                        <h4><Link href="/">{item.title}</Link></h4>
                         <div className="space-10"/>
                         <p className="post-p">{item.description}</p>
                         <div className="space-10"/>
-                        <Link to="/" className="readmore4">Read more</Link>
+                        <Link href="/" className="readmore4">Read more</Link>
                     </div>
                 </div>
             ))}
-            {showMore ? <Link to="/" className="showmore">Show more</Link> : null}
+            {showMore ? <Link href="/" className="showmore">Show more</Link> : null}
         </div>
     );
 };

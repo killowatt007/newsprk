@@ -1,14 +1,14 @@
 import React, {Fragment} from 'react';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FontAwesome from "../../components/uiStyle/FontAwesome";
 
-import trend31 from '../../doc/img/trending/trend31.jpg';
-import trend32 from '../../doc/img/trending/trend32.jpg';
-import trend33 from '../../doc/img/trending/trend33.jpg';
-import trend34 from '../../doc/img/trending/trend34.jpg';
-import trend35 from '../../doc/img/trending/trend35.jpg';
-import trend36 from '../../doc/img/trending/trend36.jpg';
-import trend37 from '../../doc/img/blog/90652.jpg';
+const trend31 = '/img/trending/trend31.jpg';
+const trend32 = '/img/trending/trend32.jpg';
+const trend33 = '/img/trending/trend33.jpg';
+const trend34 = '/img/trending/trend34.jpg';
+const trend35 = '/img/trending/trend35.jpg';
+const trend36 = '/img/trending/trend36.jpg';
+const trend37 = '/img/blog/90652.jpg';
 
 const trendingNews = [
     {
@@ -51,7 +51,7 @@ const TrendingNewsThree = () => {
                     <div className="single_post post_type3 xs-mb90 post_type15">
                         <div className="post_img border-radious5">
                             <div className="img_wrap">
-                                <Link to="/home-three">
+                                <Link href="/home-three">
                                     <img src={trend31} alt="trend31"/>
                                 </Link>
                             </div>
@@ -60,21 +60,21 @@ const TrendingNewsThree = () => {
                         <div className="single_post_text">
                             <div className="row">
                                 <div className="col-9 align-self-cnter">
-                                    <div className="meta3"><Link to="/">TECHNOLOGY</Link>
-                                        <Link to="/">March 26, 2020</Link>
+                                    <div className="meta3"><Link href="/">TECHNOLOGY</Link>
+                                        <Link href="/">March 26, 2020</Link>
                                     </div>
                                 </div>
                                 <div className="col-3 align-self-cnter">
                                     <div className="share_meta4 text-right">
                                         <ul className="inline">
-                                            <li><Link to="/"><FontAwesome name="bookmark"/></Link></li>
-                                            <li><Link to="/"><FontAwesome name="share"/></Link></li>
+                                            <li><Link href="/"><FontAwesome name="bookmark"/></Link></li>
+                                            <li><Link href="/"><FontAwesome name="share"/></Link></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div className="space-5"/>
-                            <h4><Link to="/post1">Japan’s virus puzzled the world luck
+                            <h4><Link href="/post1">Japan’s virus puzzled the world luck
                                 running out?</Link></h4>
                             <div className="space-10"/>
                             <p className="post-p">The property, complete with 30-seat
@@ -91,14 +91,14 @@ const TrendingNewsThree = () => {
                                 <div className="single_post type10 type16 widgets_small mb15">
                                     <div className="post_img">
                                         <div className="img_wrap">
-                                            <Link to="/"><img src={item.photo} alt="thumb"/></Link>
+                                            <Link href="/"><img src={item.photo} alt="thumb"/></Link>
                                         </div>
                                     </div>
                                     <div className="single_post_text">
-                                        <div className="meta3"><Link to="">TECHNOLOGY</Link>
-                                            <Link to="">March 26, 2020</Link>
+                                        <div className="meta3"><Link href="">TECHNOLOGY</Link>
+                                            <Link href="">March 26, 2020</Link>
                                         </div>
-                                        <h4><Link to="/">{item.title}</Link></h4>
+                                        <h4><Link href="/">{item.title}</Link></h4>
                                     </div>
                                 </div>
                                 {i + 1 < trendingNews.length ? <Fragment>

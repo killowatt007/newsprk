@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
-import {NavLink} from "react-router-dom";
+import Link from 'next/link';
 import SidebarMenu from "../SidebarMenu";
 
 const menus = [
@@ -226,14 +226,14 @@ const MainMenuTwo = () => {
                                                 className={`
                                                 ${item.child ? 'dropdown' : ''}
                                                 nav-item`}>
-                                                {item.child ? <NavLink onClick={e => e.preventDefault()} to="/"
+                                                {item.child ? <Link href="/"
                                                                        className="menu-dropdown"
                                                                        data-toggle="dropdown">{item.linkText}
                                                         <FontAwesome
-                                                            name={item.icon}/></NavLink>
-                                                    : <NavLink to={item.link} className="menu-dropdown"
+                                                            name={item.icon}/></Link>
+                                                    : <Link href={item.link} className="menu-dropdown"
                                                                data-toggle="dropdown">{item.linkText} <FontAwesome
-                                                        name={item.icon}/></NavLink>}
+                                                        name={item.icon}/></Link>}
 
                                                 {item.child ?
                                                     <ul className="dropdown-menu" role="menu">
@@ -242,15 +242,15 @@ const MainMenuTwo = () => {
                                                                 className={`${sub_item.child ? 'dropdown-submenu' : null}
                                                         `}>
                                                                 {sub_item.child ?
-                                                                    <NavLink onClick={e => e.preventDefault()}
-                                                                             to="/">{sub_item.linkText}</NavLink>
-                                                                    : <NavLink
-                                                                        to={sub_item.link}>{sub_item.linkText}</NavLink>}
+                                                                    <Link
+                                                                             href="/">{sub_item.linkText}</Link>
+                                                                    : <Link
+                                                                        href={sub_item.link}>{sub_item.linkText}</Link>}
                                                                 {sub_item.third_menu ?
                                                                     <ul className="dropdown-menu">
                                                                         {sub_item.third_menu.map((third_item, i) => (
-                                                                            <li key={i}><NavLink
-                                                                                to={third_item.link}>{third_item.linkText}</NavLink>
+                                                                            <li key={i}><Link
+                                                                                href={third_item.link}>{third_item.linkText}</Link>
                                                                             </li>
                                                                         ))}
                                                                     </ul> : null}

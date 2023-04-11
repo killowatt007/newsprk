@@ -1,14 +1,7 @@
 import React, {Fragment, useState} from 'react';
-import {TabContent, TabPane, Nav, NavItem, Fade} from 'reactstrap';
+import {TabContent, TabPane, Nav, Fade} from 'reactstrap';
 import classnames from 'classnames';
-// import {Link} from "react-router-dom";
 import {useRouter} from "next/router";
-
-// import thumb1 from '../../doc/img/header/widget/tab1.jpg';
-// import thumb2 from '../../doc/img/header/widget/tab2.jpg';
-// import thumb3 from '../../doc/img/header/widget/tab3.jpg';
-// import thumb4 from '../../doc/img/header/widget/tab4.jpg';
-// import thumb5 from '../../doc/img/header/widget/tab5.jpg';
 
 const data = [
     {
@@ -96,7 +89,7 @@ const WidgetTab = ({className, dark}) => {
     return (
         <div className={`widget_tab md-mt-30 ${className}`}>
             <Nav tabs>
-                    <li class="nav-item"><a
+                    <li key="1" className="nav-item"><a
                         className={classnames({active: activeTab === '1'})}
                         onClick={() => {
                             toggle('1');
@@ -104,7 +97,7 @@ const WidgetTab = ({className, dark}) => {
                     >
                         RELATED
                     </a></li>
-                    <li class="nav-item"><a
+                    <li key="2" className="nav-item"><a
                         className={classnames({active: activeTab === '2'})}
                         onClick={() => {
                             toggle('2');
@@ -112,7 +105,7 @@ const WidgetTab = ({className, dark}) => {
                     >
                         RELATED
                         </a></li>
-                    <li class="nav-item"><a
+                    <li key="3" className="nav-item"><a
 
                         className={classnames({active: activeTab === '3'})}
                         onClick={() => {

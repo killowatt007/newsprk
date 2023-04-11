@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
 import {useRouter} from "next/router";
+import { useRef } from 'react';
 
 const trendbig1 = "/img/trending/trendbig1.jpg";
 const trendbig2 = "/img/trending/trendbig2.jpg";
@@ -30,18 +31,18 @@ const trendingNews = [
     },
 ];
 const TrendingNewsSlider = () => {
-    const [swiper, setSwiper] = useState(null);
     const router = useRouter()
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
 
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
     const params = {
@@ -69,7 +70,7 @@ const TrendingNewsSlider = () => {
     };
     return (
         <div className="carousel_post2_type3 nav_style1">
-            <Swiper getSwiper={setSwiper} className="trancarousel" {...params}>
+            <Swiper ref={swip} className="trancarousel" {...params}>
                 {trendingNews.map((item, i) => (
                     <div key={i} className="single_post post_type3">
                         <div className="post_img">

@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
+import Link from "next/link";
 import FontAwesome from "../uiStyle/FontAwesome";
 import {Collapse} from "reactstrap";
-import {useRouter} from "next/router";
 
 const SidebarMenu = ({menus, sideShow, setSideShow, className}) => {
     const [sMenu, setSMenu] = useState(null);
     const [stMenu, setSTMenu] = useState(null);
-    const router = useRouter()
-
     return (
         <div className={`sidebarMenu ${sideShow ? '' : 'hideSideMenu'} ${className ? className : ''}`}>
             <span className="clox" onClick={() => setSideShow(false)}>Close</span>
@@ -22,8 +20,8 @@ const SidebarMenu = ({menus, sideShow, setSideShow, className}) => {
                             >{item.linkText}
                                 <FontAwesome
                                     name={sMenu === item.id ? 'angle-down active' : 'angle-down'}/></p>
-                            : <a exact className={sMenu === item.id ? 'active' : ''}
-                                       onClick={() => router.push(item.link)}>{item.linkText}</a>}
+                            : <Link className={sMenu === item.id ? 'active' : ''}
+                                       href={item.link}>{item.linkText}</Link>}
                         {item.child ?
                             <Collapse isOpen={sMenu === item.id}>
                                 <ul className="subMenu">
@@ -38,14 +36,14 @@ const SidebarMenu = ({menus, sideShow, setSideShow, className}) => {
                                                     <FontAwesome
                                                         name={stMenu === sub_item.id ? 'angle-down active' : 'angle-down'}/>
                                                 </p>
-                                                : <a exact
-                                                    onClick={() => router.push(sub_item.link)}>{sub_item.linkText}</a>}
+                                                : <Link
+                                                           href={sub_item.link}>{sub_item.linkText}</Link>}
                                             {sub_item.third_menu ?
                                                 <Collapse isOpen={stMenu === sub_item.id}>
                                                     <ul className="thirdMenu">
                                                         {sub_item.third_menu.map((third_item, i) => (
-                                                            <li key={i}><a
-                                                                onClick={() => router.push(third_item.link)}>{third_item.linkText}</a>
+                                                            <li key={i}><Link
+                                                                href={third_item.link}>{third_item.linkText}</Link>
                                                             </li>
                                                         ))}
                                                     </ul>

@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
 import {mostViewSort} from "../../utils/commonFunctions";
 import {useRouter} from "next/router";
+import { useRef } from 'react';
 
 // images
 const popularsm1 = '/img/popular/popularsm1.jpg';
@@ -65,18 +66,18 @@ const populerPOsts = [
 ];
 
 const PopularPosts = () => {
-    const [swiper, setSwiper] = useState(null);
     const router = useRouter()
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
 
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
 
@@ -90,7 +91,7 @@ const PopularPosts = () => {
             <h2 className="widget-title">Popular Posts</h2>
             <div className="popular_carousel pt-15 multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper ref={swip} {...params}>
                     {mostViewSort(populerPOsts).map((item, i) => (
                         <div key={i} className="single_post type10 widgets_small mb15">
                             <div className="post_img">

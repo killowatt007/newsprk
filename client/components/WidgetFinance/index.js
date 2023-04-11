@@ -1,10 +1,12 @@
 import React from 'react';
-import finance21 from '../../doc/img/finance/finance21.jpg';
-import finance22 from '../../doc/img/finance/finance22.jpg';
-import finance23 from '../../doc/img/finance/finance23.jpg';
-import finance24 from '../../doc/img/finance/finance24.jpg';
+import Link from 'next/link';
+
+const finance21 = '/img/finance/finance21.jpg';
+const finance22 = '/img/finance/finance22.jpg';
+const finance23 = '/img/finance/finance23.jpg';
+const finance24 = '/img/finance/finance24.jpg';
+
 import FontAwesome from "../uiStyle/FontAwesome";
-import {Link} from "react-router-dom";
 
 const finance = [
     {
@@ -42,25 +44,25 @@ const WidgetFinance = () => {
                 <div key={i} className="single_post mb30 type18">
                     <div className="post_img">
                         <div className="img_wrap">
-                            <Link to="/">
+                            <Link href="/">
                                 <img src={item.image} alt="thumb"/>
                             </Link>
                         </div>
                         <span className="batch3 date">{item.date}</span>
                     </div>
                     <div className="single_post_text">
-                        <h4><Link to="/post1">{item.title}</Link></h4>
+                        <h4><Link href="/post1">{item.title}</Link></h4>
                         <div className="space-10"/>
                         <p className="post-p">{item.body}</p>
                         <ul className="mt20 like_cm">
-                            <li><Link to="/"><FontAwesome name="eye"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="heart"/> 6745</Link></li>
-                            <li><Link to="/"><FontAwesome name="share"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="eye"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="heart"/> 6745</Link></li>
+                            <li><Link href="/"><FontAwesome name="share"/> 6745</Link></li>
                         </ul>
                     </div>
                 </div>
             ))}
-            <Link to="/" className="showmore">Show more</Link>
+            <Link href="/" className="showmore">Show more</Link>
         </div>
     );
 };

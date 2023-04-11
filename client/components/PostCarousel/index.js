@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Swiper from 'react-id-swiper';
 import FontAwesome from "../uiStyle/FontAwesome";
 import {useRouter} from "next/router";
+import { useRef } from 'react';
 
 const postSlider = [
     {
@@ -37,18 +38,18 @@ const postSlider = [
 ];
 
 const PostCarousel = ({className}) => {
-    const [swiper, setSwiper] = useState(null);
     const router = useRouter()
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
 
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
     const params = {
@@ -82,7 +83,7 @@ const PostCarousel = ({className}) => {
                         <div className="carousel_posts1 owl-carousel nav_style2 mb40 mt30">
                             {/*CAROUSEL START*/}
                             <div className="px-4 position-relative">
-                                <Swiper getSwiper={setSwiper} className="trancarousel" {...params}>
+                                <Swiper ref={swip} className="trancarousel" {...params}>
                                     {postSlider.map((item, i) => (
                                         <div key={i} className="single_post widgets_small post_type5">
                                             <div className="post_img">

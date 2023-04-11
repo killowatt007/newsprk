@@ -1,15 +1,16 @@
 import React, {Fragment, useState} from 'react';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
 import Swiper from 'react-id-swiper';
 import {mostViewSort} from "../../utils/commonFunctions";
+import { useRef } from 'react';
 
 // images
-import whats21 from '../../doc/img/whats/whats21.jpg';
-import whats22 from '../../doc/img/whats/whats22.jpg';
-import whats23 from '../../doc/img/whats/whats23.jpg';
-import whats24 from '../../doc/img/whats/whats24.jpg';
-import whats25 from '../../doc/img/whats/whats25.jpg';
+const whats21 = '/img/whats/whats21.jpg';
+const whats22 = '/img/whats/whats22.jpg';
+const whats23 = '/img/whats/whats23.jpg';
+const whats24 = '/img/whats/whats24.jpg';
+const whats25 = '/img/whats/whats25.jpg';
 
 const posts = [
     {
@@ -40,17 +41,16 @@ const posts = [
 ];
 
 const Whatsnew = ({className, title}) => {
-    const [swiper, setSwiper] = useState(null);
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
         }
     };
-
     const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
 
@@ -64,19 +64,19 @@ const Whatsnew = ({className, title}) => {
             <h2 className="widget-title">{title}</h2>
             <div className="popular_carousel multipleRowCarousel nav_style1">
                 {/*CAROUSEL START*/}
-                <Swiper getSwiper={setSwiper} {...params}>
+                <Swiper ref={swip} {...params}>
                     {mostViewSort(posts).map((item, i) => (
                         <div key={i} className="single_post type10 type16 widgets_small">
                             <div className="post_img">
                                 <div className="img_wrap">
-                                    <Link to="/">
+                                    <Link href="/">
                                         <img src={item.image} alt="thubm"/>
                                     </Link>
                                 </div>
                             </div>
                             <div className="single_post_text">
-                                <h4><Link to="/post1">{item.title}</Link></h4>
-                                <div className="meta4"><Link to="/">{item.category}</Link></div>
+                                <h4><Link href="/post1">{item.title}</Link></h4>
+                                <div className="meta4"><Link href="/">{item.category}</Link></div>
                                 {i + 1 < posts.length ? <Fragment>
                                     <div className="space-5"/>
                                     <div className="border_black"/>

@@ -1,5 +1,4 @@
 import React from 'react';
-// import {Link} from "react-router-dom";
 import {useRouter} from "next/router";
 
 const quick_links = [

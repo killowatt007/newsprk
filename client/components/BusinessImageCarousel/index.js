@@ -1,14 +1,15 @@
-import React, {Fragment, useState} from 'react';
-// import {Link} from "react-router-dom";
+import React, {Fragment} from 'react';
+import Link from 'next/link';
 import Swiper from 'react-id-swiper';
 import FontAwesome from "../uiStyle/FontAwesome";
+import { useRef } from 'react';
 
-import pop51 from '../../doc/img/popular/pop51.jpg';
-import pop52 from '../../doc/img/popular/pop52.jpg';
-import pop53 from '../../doc/img/popular/pop53.jpg';
-import pop54 from '../../doc/img/popular/pop54.jpg';
-import pop56 from '../../doc/img/popular/pop56.jpg';
-import gallery42 from '../../doc/img/gallary/gallery42.jpg';
+const pop51 = '/img/popular/pop51.jpg';
+const pop52 = '/img/popular/pop52.jpg';
+const pop53 = '/img/popular/pop53.jpg';
+const pop54 = '/img/popular/pop54.jpg';
+const pop56 = '/img/popular/pop56.jpg';
+const gallery42 = '/img/gallary/gallery42.jpg';
 
 const populerPosts = [
     {
@@ -49,19 +50,19 @@ const galleryPosts = [
 ];
 
 const BusinessImageCarousel = () => {
-    const [swiper, setSwiper] = useState(null);
+    const swip = useRef(null);
 
     const goNext = () => {
-        if (swiper !== null) {
-            swiper.slideNext();
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slideNext();
+        }
+    };
+    const goPrev = () => {
+        if (swip.current !== null && swip.current.swiper !== null) {
+            swip.current.swiper.slidePrev();
         }
     };
 
-    const goPrev = () => {
-        if (swiper !== null) {
-            swiper.slidePrev();
-        }
-    };
     const params = {
         slidesPerView: 1,
         loop: true,
@@ -71,20 +72,20 @@ const BusinessImageCarousel = () => {
         <div className="row">
             <div className="col-lg-7">
                 <div className="image_carousel nav_style4 mb30">
-                    <Swiper getSwiper={setSwiper} {...params}>
+                    <Swiper ref={swip} {...params}>
                         {galleryPosts.map((item, i) => (
                             <div key={i} className="single_post gradient1 post_type6 border-radious7 xs-mb30">
                                 <div className="post_img gradient1">
                                     <div className="img_wrap">
-                                        {/* <Link to="/">
+                                        <Link href="/">
                                             <img src={item.photo} alt="thumb"/>
-                                        </Link> */}
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="single_post_text">
                                     <p className="meta meta_style4">Business <span>&nbsp;| &nbsp; March 26, 2020</span>
                                     </p>
-                                    {/* <h4><Link to="/video_post1">{item.title}</Link></h4> */}
+                                    <h4><Link href="/video_post1">{item.title}</Link></h4>
                                 </div>
                             </div>
                         ))}
@@ -104,11 +105,11 @@ const BusinessImageCarousel = () => {
                             <div className="single_post type10 type16 type22 widgets_small mb15">
                                 <div className="post_img">
                                     <div className="img_wrap">
-                                        {/* <Link to="/"><img src={item.photo} alt="thumb"/></Link> */}
+                                        <Link href="/"><img src={item.photo} alt="thumb"/></Link>
                                     </div>
                                 </div>
                                 <div className="single_post_text">
-                                    {/* <h4><Link to="/">{item.title}</Link></h4> */}
+                                    <h4><Link href="/">{item.title}</Link></h4>
                                 </div>
                             </div>
                             {i + 1 < populerPosts.length ? <Fragment>

@@ -1,13 +1,13 @@
 import React, {Fragment, useState} from 'react';
 import {TabContent, TabPane, Nav, NavItem, NavLink, Fade} from 'reactstrap';
 import classnames from 'classnames';
-import {Link} from "react-router-dom";
+import Link from 'next/link';
 
-import tab21 from '../../doc/img/tab/tab21.jpg';
-import tab22 from '../../doc/img/tab/tab22.jpg';
-import tab23 from '../../doc/img/tab/tab23.jpg';
-import tab24 from '../../doc/img/tab/tab24.jpg';
-import tab25 from '../../doc/img/tab/tab25.jpg';
+const tab21 = '/img/tab/tab21.jpg';
+const tab22 = '/img/tab/tab22.jpg';
+const tab23 = '/img/tab/tab23.jpg';
+const tab24 = '/img/tab/tab24.jpg';
+const tab25 = '/img/tab/tab25.jpg';
 
 const data = [
     {
@@ -51,14 +51,14 @@ const WidgetTabPane = ({arr, a_id, id}) => {
                         <div className="single_post widgets_small type8 type17">
                             <div className="post_img">
                                 <div className="img_wrap">
-                                    <Link to="/">
+                                    <Link href="/">
                                         <img src={item.image} alt="thumb"/>
                                     </Link>
                                 </div>
                             </div>
                             <div className="single_post_text">
-                                <h4><Link to="/post1">{item.title}</Link></h4>
-                                <div className="meta4"><Link to="#">{item.category}</Link></div>
+                                <h4><Link href="/post1">{item.title}</Link></h4>
+                                <div className="meta4"><Link href="#">{item.category}</Link></div>
                                 {i + 1 < arr.length ? <Fragment>
                                     <div className="space-5"/>
                                     <div className="border_black"/>

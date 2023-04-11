@@ -1,8 +1,8 @@
 import React, {Fragment, useState} from 'react';
 import {Nav, NavItem, TabContent, TabPane} from "reactstrap";
 import classnames from "classnames";
-import Fade from "reactstrap/es/Fade";
-import {Link} from "react-router-dom";
+// import Fade from "reactstrap/es/Fade";
+import Link from 'next/link';
 import FontAwesome from "../uiStyle/FontAwesome";
 
 const data = [
@@ -25,7 +25,8 @@ const data = [
 
 const WidgetTabPane = ({arr, a_id, id}) => {
     return (
-        <Fade in={id === a_id}>
+        // <Fade in={id === a_id}>
+        <div>
             {arr.map((item, i) => (
                 <Fragment key={i}>
                     <div className="single_post widgets_small widgets_type4">
@@ -33,17 +34,17 @@ const WidgetTabPane = ({arr, a_id, id}) => {
                             <h2>{i + 1}</h2>
                         </div>
                         <div className="single_post_text">
-                            <h4><Link to="/post1">{item.title}</Link></h4>
+                            <h4><Link href="/post1">{item.title}</Link></h4>
                             <div className="row">
                                 <div className="col-7 align-self-cnter">
-                                    <div className="meta4"><Link to="/">March 20, 2020</Link>
+                                    <div className="meta4"><Link href="/">March 20, 2020</Link>
                                     </div>
                                 </div>
                                 <div className="col-5 align-self-cnter">
                                     <div className="share_meta4 text-right">
                                         <ul className="inline">
-                                            <li><Link to="/"><FontAwesome name="bookmark"/></Link></li>
-                                            <li><Link to="/"><FontAwesome name="share"/></Link></li>
+                                            <li><Link href="/"><FontAwesome name="bookmark"/></Link></li>
+                                            <li><Link href="/"><FontAwesome name="share"/></Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -57,7 +58,7 @@ const WidgetTabPane = ({arr, a_id, id}) => {
                     </Fragment> : null}
                 </Fragment>
             ))}
-        </Fade>
+        </div>
     )
 };
 const WidgetTabThree = () => {
@@ -71,7 +72,7 @@ const WidgetTabThree = () => {
             <Nav tabs>
                 <NavItem>
                     <Link
-                        to="/"
+                        href="/"
                         className={classnames({active: activeTab === '1'})}
                         onClick={(e) => {
                             e.preventDefault();
@@ -83,7 +84,7 @@ const WidgetTabThree = () => {
                 </NavItem>
                 <NavItem>
                     <Link
-                        to="/"
+                        href="/"
                         className={classnames({active: activeTab === '2'})}
                         onClick={(e) => {
                             e.preventDefault();
@@ -95,7 +96,7 @@ const WidgetTabThree = () => {
                 </NavItem>
                 <NavItem>
                     <Link
-                        to="/"
+                        href="/"
                         className={classnames({active: activeTab === '3'})}
                         onClick={(e) => {
                             e.preventDefault();
