@@ -231,6 +231,7 @@ const MainMenuThree = ({className}) => {
                                                 ${item.child ? 'dropdown' : ''}
                                                 nav-item`}>
                                                         {item.child ? <Link href="/"
+                                                                               onClick={e => e.preventDefault()}
                                                                                className="menu-dropdown"
                                                                                data-toggle="dropdown">{item.linkText}
                                                                 <FontAwesome
@@ -247,8 +248,7 @@ const MainMenuThree = ({className}) => {
                                                                         className={`${sub_item.child ? 'dropdown-submenu' : null}
                                                         `}>
                                                                         {sub_item.child ?
-                                                                            <Link
-                                                                                     href="/">{sub_item.linkText}</Link>
+                                                                            <Link href="/" onClick={e => e.preventDefault()}>{sub_item.linkText}</Link>
                                                                             : <Link
                                                                                 href={sub_item.link}>{sub_item.linkText}</Link>}
                                                                         {sub_item.third_menu ?

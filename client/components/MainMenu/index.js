@@ -445,6 +445,7 @@ const MainMenu = ({className, dark}) => {
                                                     {item.child 
                                                         ? 
                                                             <Link
+                                                                onClick={e => e.preventDefault()}
                                                                 href="/"
                                                                 className="menu-dropdown"
                                                                 data-toggle="dropdown">
@@ -468,7 +469,7 @@ const MainMenu = ({className, dark}) => {
                                                         `}>
                                                                     {sub_item.child 
                                                                         ?
-                                                                            <Link href="/">
+                                                                            <Link onClick={e => e.preventDefault()} href="/">
                                                                             {sub_item.linkText}
                                                                             </Link>
                                                                         : 

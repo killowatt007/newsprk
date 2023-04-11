@@ -226,7 +226,7 @@ const MainMenuTwo = () => {
                                                 className={`
                                                 ${item.child ? 'dropdown' : ''}
                                                 nav-item`}>
-                                                {item.child ? <Link href="/"
+                                                {item.child ? <Link href="/" onClick={e => e.preventDefault()}
                                                                        className="menu-dropdown"
                                                                        data-toggle="dropdown">{item.linkText}
                                                         <FontAwesome
@@ -242,7 +242,7 @@ const MainMenuTwo = () => {
                                                                 className={`${sub_item.child ? 'dropdown-submenu' : null}
                                                         `}>
                                                                 {sub_item.child ?
-                                                                    <Link
+                                                                    <Link onClick={e => e.preventDefault()}
                                                                              href="/">{sub_item.linkText}</Link>
                                                                     : <Link
                                                                         href={sub_item.link}>{sub_item.linkText}</Link>}
